@@ -1,5 +1,5 @@
 import { createContext, useState, useEffect, MouseEvent } from 'react';
-
+import AppHeader from './Components/AppHeader';
 export const ThemeContext = createContext('light');
 
 function App() {
@@ -34,12 +34,7 @@ function App() {
     <ThemeContext.Provider value={theme}>
       <main className="flex flex-col items-center">
         <section className="mt-12 flex w-full max-w-xl px-6">
-          <div className="flex w-full justify-between">
-            <h1 className="text-2xl font-bold tracking-[0.5em] text-white md:text-4xl">
-              TODO
-            </h1>
-            <button onClick={e => toggleTheme(e)}>ICON</button>
-          </div>
+          <AppHeader toggleTheme={toggleTheme} />{' '}
         </section>
       </main>
     </ThemeContext.Provider>
