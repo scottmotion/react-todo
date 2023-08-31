@@ -2,7 +2,6 @@
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
-    screens: {},
     colors: {
       // primary
       'bright-blue': 'hsl(220, 98%, 61%)',
@@ -25,8 +24,16 @@ export default {
     fontFamily: {
       sans: ['Josefin Sans', 'sans-serif']
     },
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'mobile-light': "url('/assets/bg-mobile-light.jpg')",
+        'mobile-dark': "url('/assets/bg-mobile-dark.jpg')",
+        'desktop-light': "url('/assets/bg-desktop-light.jpg')",
+        'desktop-dark': "url('/assets/bg-desktop-dark.jpg')",
+      }
+    },
   },
   plugins: [],
+  darkMode: 'class',
 };
 
