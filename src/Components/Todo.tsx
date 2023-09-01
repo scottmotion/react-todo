@@ -9,7 +9,10 @@ type TodoProps = {
 export default function Todo({ todo }: TodoProps) {
   return (
     <div className="flex items-center border-b border-very-light-gray-blue px-3">
-      <CheckIcon />
+      <button className="shrink-0">
+        <CheckIcon />
+      </button>
+
       <input
         type="text"
         placeholder="Create new todo..."
@@ -17,7 +20,10 @@ export default function Todo({ todo }: TodoProps) {
         disabled
         className="w-full rounded-md bg-white p-3 dark:bg-very-dark-desaturated-blue dark:text-white"
       />
-      <CrossIcon />
+      <button className="shrink-0">
+        {' '}
+        <CrossIcon />
+      </button>
     </div>
   );
 }
