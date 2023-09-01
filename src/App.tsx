@@ -6,10 +6,6 @@ import './App.css';
 
 export const ThemeContext = createContext('light');
 
-type TodoType = {
-  title: string;
-};
-
 const myTodos = [
   { title: 'Todo 1' },
   { title: 'Todo 2' },
@@ -60,9 +56,11 @@ function App() {
         <section className="absolute mt-20 flex w-full max-w-xl flex-col gap-y-6 px-6">
           <AppHeader toggleTheme={toggleTheme} />
           <NewTodo />
-          {todos.map((todo, index) => (
-            <div key={index}>{todo.title}</div>
-          ))}
+          <div className="flex flex-col gap-4 bg-white p-4">
+            {todos.map((todo, index) => (
+              <div key={index}>{todo.title}</div>
+            ))}
+          </div>
         </section>
       </main>
     </ThemeContext.Provider>
