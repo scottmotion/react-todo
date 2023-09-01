@@ -4,11 +4,26 @@ import NewTodo from './Components/NewTodo';
 
 export const ThemeContext = createContext('light');
 
-const myTodos = [{ title: 'Hello' }, { title: 'Hi' }];
+type TodoType = {
+  title: string;
+};
+
+const myTodos = [
+  { title: 'Todo 1' },
+  { title: 'Todo 2' },
+  { title: 'Todo 3' },
+  { title: 'Todo 4' },
+  { title: 'Todo 5' },
+  { title: 'Todo 6' },
+];
 
 function App() {
   const [theme, setTheme] = useState('light');
-  const [todos, setTodos] = useState(myTodos);
+  const [todos, setTodos] = useState([{}]);
+
+  useEffect(() => {
+    setTodos(myTodos);
+  }, []);
 
   useEffect(() => {
     if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
@@ -39,7 +54,12 @@ function App() {
       <main className="flex flex-col items-center">
         <section className="mt-20 flex w-full max-w-xl flex-col gap-y-6 px-6">
           <AppHeader toggleTheme={toggleTheme} />
-          <NewTodo title={'Hello'} />
+          <NewTodo />
+        </section>
+        <section className="mt-8 flex w-full max-w-xl flex-col gap-y-6 px-6">
+          {todos.map((todo, index) => (
+            <div key={index}>{todo.title}</div>
+          ))}
         </section>
       </main>
     </ThemeContext.Provider>
