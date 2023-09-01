@@ -6,7 +6,7 @@ type TodoProps = {
 
 export default function Todo({ todo }: TodoProps) {
   return (
-    <div className="border-b border-black border-very-light-gray-blue">
+    <div className="border-b border-very-light-gray-blue">
       <input
         type="text"
         placeholder="Create new todo..."
