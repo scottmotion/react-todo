@@ -5,6 +5,7 @@ import { ReactComponent as DarkModeIcon } from '/src/assets/icon-moon.svg';
 
 export default function AppHeader({ toggleTheme }) {
   const theme = useContext(ThemeContext);
+  // console.log(typeof toggleTheme);
   return (
     <div className="flex w-full justify-between">
       <h1 className="text-2xl font-bold tracking-[0.5em] text-white md:text-4xl">
