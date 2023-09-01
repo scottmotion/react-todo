@@ -6,7 +6,11 @@ import './App.css';
 
 export const ThemeContext = createContext('light');
 
-const myTodos = [
+interface Todo {
+  title: string;
+}
+
+const myTodos: Todo[] = [
   { title: 'Todo 1' },
   { title: 'Todo 2' },
   { title: 'Todo 3' },
@@ -17,11 +21,7 @@ const myTodos = [
 
 function App() {
   const [theme, setTheme] = useState('light');
-  const [todos, setTodos] = useState([{}]);
-
-  useEffect(() => {
-    setTodos(myTodos);
-  }, []);
+  const [todos, setTodos] = useState(myTodos);
 
   useEffect(() => {
     if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
@@ -53,7 +53,7 @@ function App() {
         <section className="relative flex w-full">
           <img className="w-full" id="headerImage"></img>
         </section>
-        <section className="absolute mt-20 flex w-full max-w-xl flex-col gap-y-6 px-6">
+        <section className="absolute mt-10 flex w-full max-w-xl flex-col gap-y-6 px-6 md:mt-20">
           <AppHeader toggleTheme={toggleTheme} />
           <NewTodo />
           <div className="flex flex-col gap-4 bg-white p-4">
