@@ -51,12 +51,12 @@ function App() {
     <ThemeContext.Provider value={theme}>
       <main className="flex flex-col items-center">
         <section className="relative flex w-full">
-          <img className="w-full" id="headerImage"></img>
+          <img className="content-header-mobile-light md:content-header-desktop-light md:dark:content-header-desktop-dark dark:content-header-mobile-dark w-full w-full"></img>
         </section>
         <section className="absolute mt-10 flex w-full max-w-xl flex-col gap-y-6 px-6 md:mt-20">
           <AppHeader toggleTheme={toggleTheme} />
           <NewTodo />
-          <div className="flex flex-col gap-4 bg-white p-4">
+          <div className="flex flex-col gap-4 rounded-md bg-white p-4 dark:bg-very-dark-desaturated-blue dark:text-white">
             {todos.map((todo, index) => (
               <div key={index}>{todo.title}</div>
             ))}

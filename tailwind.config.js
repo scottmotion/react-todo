@@ -1,5 +1,4 @@
 /** @type {import('tailwindcss').Config} */
-const plugin = require('tailwindcss/plugin');
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
@@ -7,11 +6,11 @@ export default {
       sans: ['Josefin Sans', 'sans-serif'],
     },
     extend: {
-      backgroundImage: {
-        'mobile-light': "url('/assets/bg-mobile-light.jpg')",
-        'mobile-dark': "url('/assets/bg-mobile-dark.jpg')",
-        'desktop-light': "url('/assets/bg-desktop-light.jpg')",
-        'desktop-dark': "url('/assets/bg-desktop-dark.jpg')",
+      content: {
+        'header-mobile-light': "url('/assets/bg-mobile-light.jpg')",
+        'header-mobile-dark': "url('/assets/bg-mobile-dark.jpg')",
+        'header-desktop-light': "url('/assets/bg-desktop-light.jpg')",
+        'header-desktop-dark': "url('/assets/bg-desktop-dark.jpg')",
       },
       colors: {
         // primary
@@ -35,12 +34,6 @@ export default {
       },
     },
   },
-  plugins: [
-    plugin(function ({ addBase }) {
-      addBase({
-        html: { fontSize: '18px' },
-      });
-    }),
-  ],
+  plugins: [],
   darkMode: 'class',
 };
