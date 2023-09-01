@@ -2,6 +2,8 @@ import { createContext, useState, useEffect, MouseEvent } from 'react';
 import AppHeader from './Components/AppHeader';
 import NewTodo from './Components/NewTodo';
 
+import './App.css';
+
 export const ThemeContext = createContext('light');
 
 type TodoType = {
@@ -52,11 +54,12 @@ function App() {
   return (
     <ThemeContext.Provider value={theme}>
       <main className="flex flex-col items-center">
-        <section className="mt-20 flex w-full max-w-xl flex-col gap-y-6 px-6">
+        <section className="relative flex w-full">
+          <img className="w-full" id="headerImage"></img>
+        </section>
+        <section className="absolute mt-20 flex w-full max-w-xl flex-col gap-y-6 px-6">
           <AppHeader toggleTheme={toggleTheme} />
           <NewTodo />
-        </section>
-        <section className="mt-8 flex w-full max-w-xl flex-col gap-y-6 px-6">
           {todos.map((todo, index) => (
             <div key={index}>{todo.title}</div>
           ))}
