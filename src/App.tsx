@@ -51,7 +51,7 @@ function App() {
     <ThemeContext.Provider value={theme}>
       <main className="flex flex-col items-center">
         <section className="relative flex w-full">
-          <img className="content-header-mobile-light md:content-header-desktop-light md:dark:content-header-desktop-dark dark:content-header-mobile-dark w-full w-full"></img>
+          <img className="content-header-mobile-light md:content-header-desktop-light md:dark:content-header-desktop-dark dark:content-header-mobile-dark w-full"></img>
         </section>
         <section className="absolute mt-10 flex w-full max-w-xl flex-col gap-y-6 px-6 md:mt-20">
           <AppHeader toggleTheme={toggleTheme} />
