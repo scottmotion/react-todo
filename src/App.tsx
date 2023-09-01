@@ -67,6 +67,10 @@ function App() {
             {todos.map((todo, index) => (
               <Todo key={index} todo={todo} />
             ))}
+            <div className="flex w-full items-center justify-between p-3">
+              <p>5 Items</p>
+              <p>Clear</p>
+            </div>
           </div>
         </section>
       </main>

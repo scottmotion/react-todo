@@ -10,7 +10,7 @@ type ThemeToggleProps = {
 export default function ThemeToggle({ toggleTheme }: ThemeToggleProps) {
   const theme = useContext(ThemeContext);
   return (
-    <button onClick={e => toggleTheme(e)}>
+    <button className="text-xl md:text-3xl" onClick={e => toggleTheme(e)}>
       {theme === 'dark' ? <LightModeIcon /> : <DarkModeIcon />}
     </button>
   );
