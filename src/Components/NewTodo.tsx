@@ -1,7 +1,7 @@
-export default function NewTodo({ title }) {
+export default function NewTodo({}) {
   return (
     <div>
-      <input type="text" className="w-full" value={title} />
+      <input type="text" className="w-full" />
     </div>
   );
 }
