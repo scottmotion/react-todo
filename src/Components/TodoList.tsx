@@ -6,6 +6,10 @@ type TodoListType = {
 };
 
 export default function TodoList({ todos }: TodoListType) {
+  function handleClearCompleted() {
+    console.log('CLEAR');
+  }
+
   return (
     <div className="flex flex-col rounded-md bg-white dark:bg-very-dark-desaturated-blue dark:text-white">
       {todos.map((todo, index) => (
@@ -15,7 +19,7 @@ export default function TodoList({ todos }: TodoListType) {
         <p>
           {todos.filter(todo => todo.isCompleted === false).length} items left
         </p>
-        <p>Clear Completed</p>
+        <button onClick={handleClearCompleted}>Clear Completed</button>
       </div>
     </div>
   );
