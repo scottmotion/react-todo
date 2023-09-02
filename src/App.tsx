@@ -10,12 +10,12 @@ import './App.css';
 export const ThemeContext = createContext('light');
 
 const myTodos: TodoType[] = [
-  { title: 'Todo 1' },
-  { title: 'Todo 2' },
-  { title: 'Todo 3' },
-  { title: 'Todo 4' },
-  { title: 'Todo 5' },
-  { title: 'Todo 6' },
+  { title: 'Todo 1', isCompleted: true },
+  { title: 'Todo 2', isCompleted: false },
+  { title: 'Todo 3', isCompleted: false },
+  { title: 'Todo 4', isCompleted: false },
+  { title: 'Todo 5', isCompleted: false },
+  { title: 'Todo 6', isCompleted: false },
 ];
 
 function App() {

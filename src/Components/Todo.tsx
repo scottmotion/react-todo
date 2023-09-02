@@ -8,8 +8,14 @@ type TodoProps = {
 
 export default function Todo({ todo }: TodoProps) {
   return (
-    <div className="flex items-center border-b border-very-light-gray-blue px-3">
-      <button className="shrink-0">
+    <div className="dark:border-very-dark-gray-blue-2 flex items-center border-b border-very-light-gray-blue px-3">
+      <button
+        className={`dark:border-very-dark-gray-blue-2 shrink-0 rounded-full border border-very-light-gray-blue p-1.5 ${
+          todo.isCompleted
+            ? 'from-check-bg-start to-check-bg-end bg-gradient-to-br'
+            : ''
+        }`}
+      >
         <CheckIcon />
       </button>
 
@@ -18,10 +24,11 @@ export default function Todo({ todo }: TodoProps) {
         placeholder="Create new todo..."
         value={todo.title}
         disabled
-        className="w-full rounded-md bg-white p-3 dark:bg-very-dark-desaturated-blue dark:text-white"
+        className={`w-full rounded-md bg-white p-3 dark:bg-very-dark-desaturated-blue dark:text-white ${
+          todo.isCompleted ? 'line-through' : ''
+        }`}
       />
       <button className="shrink-0">
-        {' '}
         <CrossIcon />
       </button>
     </div>
