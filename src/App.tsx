@@ -1,9 +1,10 @@
 import { createContext, useState, useEffect, MouseEvent } from 'react';
 import AppHeader from './Components/AppHeader';
 import ThemeToggle from './Components/ThemeToggle';
-import Todo from './Components/Todo';
 import NewTodo from './Components/NewTodo';
+import Todo from './Components/Todo';
 import { TodoType } from './Types/TodoType';
+import TodoFilters from './Components/TodoFilters';
 
 import './App.css';
 
@@ -70,6 +71,7 @@ function App() {
               <p>Clear Completed</p>
             </div>
           </div>
+          <TodoFilters />
         </section>
       </main>
     </ThemeContext.Provider>
