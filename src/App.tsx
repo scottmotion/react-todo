@@ -2,8 +2,8 @@ import { createContext, useState, useEffect, MouseEvent } from 'react';
 import AppHeader from './Components/AppHeader';
 import ThemeToggle from './Components/ThemeToggle';
 import NewTodo from './Components/NewTodo';
-import Todo from './Components/Todo';
 import { TodoType } from './Types/TodoType';
+import TodoList from './Components/TodoList';
 import TodoFilters from './Components/TodoFilters';
 
 import './App.css';
@@ -59,18 +59,7 @@ function App() {
             <ThemeToggle toggleTheme={toggleTheme} />
           </AppHeader>
           <NewTodo />
-          <div className="flex flex-col rounded-md bg-white dark:bg-very-dark-desaturated-blue dark:text-white">
-            {todos.map((todo, index) => (
-              <Todo key={index} todo={todo} />
-            ))}
-            <div className="flex w-full items-center justify-between p-3">
-              <p>
-                {todos.filter(todo => todo.isCompleted === false).length} items
-                left
-              </p>
-              <p>Clear Completed</p>
-            </div>
-          </div>
+          <TodoList todos={todos} />
           <TodoFilters />
         </section>
       </main>
