@@ -1,5 +1,5 @@
 type AppHeaderProps = {
-  children: any;
+  children: React.ReactNode;
 };
 
 export default function AppHeader({ children }: AppHeaderProps) {

@@ -7,7 +7,7 @@ type TodoListType = {
 
 export default function TodoList({ todos }: TodoListType) {
   function handleClearCompleted() {
-    console.log('CLEAR');
+    console.log('HANDLE CLEAR');
   }
 
   return (

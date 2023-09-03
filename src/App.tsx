@@ -48,11 +48,15 @@ function App() {
     }
   }
 
+  function addTodo() {
+    console.log('ADD TODO');
+  }
+
   return (
     <ThemeContext.Provider value={theme}>
       <main className="flex flex-col items-center">
         <section className="relative flex w-full">
-          <img className="content-header-mobile-light md:content-header-desktop-light md:dark:content-header-desktop-dark dark:content-header-mobile-dark w-full"></img>
+          <img className="w-full content-header-mobile-light dark:content-header-mobile-dark md:content-header-desktop-light md:dark:content-header-desktop-dark"></img>
         </section>
         <section className="absolute mt-10 flex w-full max-w-xl flex-col gap-y-6 px-6 md:mt-20">
           <AppHeader>
