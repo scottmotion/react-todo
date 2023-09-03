@@ -65,7 +65,11 @@ function App() {
             <ThemeToggle toggleTheme={toggleTheme} />
           </AppHeader>
           <NewTodo />
-          <TodoList todos={todos} activeFilter={activeFilter} />
+          <TodoList
+            todos={todos}
+            filters={filters}
+            activeFilter={activeFilter}
+          />
           <TodoFilters
             filters={filters}
             activeFilter={activeFilter}
