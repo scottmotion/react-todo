@@ -1,6 +1,14 @@
-export default function NewTodo({}) {
+type NewTodoProps = {
+  addTodo: any;
+};
+
+export default function NewTodo({ addTodo }: NewTodoProps) {
   function handleChange() {
     console.log('HANDLE CHANGE');
+  }
+  function handleSubmit() {
+    console.log('HANDLE SUBMIT');
+    addTodo();
   }
   return (
     <div>
