@@ -10,7 +10,7 @@ export default function Todo({ todo }: TodoProps) {
   return (
     <div className="flex items-center border-b border-very-light-gray-blue px-3 dark:border-very-dark-gray-blue-2">
       <button
-        className={`shrink-0 rounded-full border border-very-light-gray-blue p-1.5 dark:border-very-dark-gray-blue-2 ${
+        className={`aspect-square shrink-0 rounded-full border border-very-light-gray-blue p-1.5 dark:border-very-dark-gray-blue-2 ${
           todo.isCompleted
             ? 'bg-gradient-to-br from-check-bg-start to-check-bg-end stroke-white'
             : 'stroke-none'
