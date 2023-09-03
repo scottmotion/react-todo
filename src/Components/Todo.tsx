@@ -8,12 +8,12 @@ type TodoProps = {
 
 export default function Todo({ todo }: TodoProps) {
   return (
-    <div className="dark:border-very-dark-gray-blue-2 flex items-center border-b border-very-light-gray-blue px-3">
+    <div className="flex items-center border-b border-very-light-gray-blue px-3 dark:border-very-dark-gray-blue-2">
       <button
-        className={`dark:border-very-dark-gray-blue-2 shrink-0 rounded-full border border-very-light-gray-blue p-1.5 ${
+        className={`shrink-0 rounded-full border border-very-light-gray-blue p-1.5 dark:border-very-dark-gray-blue-2 ${
           todo.isCompleted
-            ? 'from-check-bg-start to-check-bg-end bg-gradient-to-br'
-            : ''
+            ? 'bg-gradient-to-br from-check-bg-start to-check-bg-end stroke-white'
+            : 'stroke-none'
         }`}
       >
         <CheckIcon />
@@ -25,7 +25,7 @@ export default function Todo({ todo }: TodoProps) {
         value={todo.title}
         disabled
         className={`w-full rounded-md bg-white p-3 dark:bg-very-dark-desaturated-blue dark:text-white ${
-          todo.isCompleted ? 'line-through' : ''
+          todo.isCompleted ? 'line-through opacity-50' : ''
         }`}
       />
       <button className="shrink-0">
