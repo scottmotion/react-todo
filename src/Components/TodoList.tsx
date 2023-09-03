@@ -3,9 +3,10 @@ import { TodoType } from '../Types/TodoType';
 
 type TodoListType = {
   todos: TodoType[];
+  activeFilter: number;
 };
 
-export default function TodoList({ todos }: TodoListType) {
+export default function TodoList({ todos, activeFilter }: TodoListType) {
   function handleClearCompleted() {
     console.log('HANDLE CLEAR');
   }

@@ -22,6 +22,8 @@ const myTodos: TodoType[] = [
 function App() {
   const [theme, setTheme] = useState('light');
   const [todos, setTodos] = useState(myTodos);
+  const filters: string[] = ['All', 'Active', 'Completed'];
+  const [activeFilter, setActiveFilter] = useState(0);
 
   // Check if client prefers dark mode
   // useEffect(() => {
@@ -63,8 +65,12 @@ function App() {
             <ThemeToggle toggleTheme={toggleTheme} />
           </AppHeader>
           <NewTodo />
-          <TodoList todos={todos} />
-          <TodoFilters />
+          <TodoList todos={todos} activeFilter={activeFilter} />
+          <TodoFilters
+            filters={filters}
+            activeFilter={activeFilter}
+            setActiveFilter={setActiveFilter}
+          />
         </section>
       </main>
     </ThemeContext.Provider>
