@@ -50,8 +50,14 @@ function App() {
     }
   }
 
-  function addTodo() {
-    console.log('ADD TODO');
+  function addTodo(newTodo: TodoType) {
+    console.log('ADD TODO: ', newTodo);
+    // myTodos.push(newTodo);
+    console.log(myTodos);
+    setTodos(prevTodos => ({
+      ...prevTodos,
+      newTodo,
+    }));
   }
 
   return (
