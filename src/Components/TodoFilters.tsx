@@ -1,7 +1,7 @@
 type TodoFiltersProps = {
   filters: string[];
-  activeFilter: number;
-  setActiveFilter: React.Dispatch<React.SetStateAction<number>>;
+  activeFilter: string;
+  setActiveFilter: React.Dispatch<React.SetStateAction<string>>;
 };
 
 export default function TodoFilters({
@@ -13,9 +13,9 @@ export default function TodoFilters({
     <div className="flex w-full items-center justify-center gap-6 rounded-md bg-white p-3 dark:bg-very-dark-desaturated-blue dark:text-white">
       {filters.map((filter, index) => (
         <button
-          className={`${index === activeFilter ? 'text-bright-blue' : ''}`}
+          className={`${filter === activeFilter ? 'text-bright-blue' : ''}`}
           key={index}
-          onClick={() => setActiveFilter(index)}
+          onClick={() => setActiveFilter(filter)}
         >
           {filter}
         </button>

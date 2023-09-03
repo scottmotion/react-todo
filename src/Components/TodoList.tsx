@@ -3,15 +3,10 @@ import { TodoType } from '../Types/TodoType';
 
 type TodoListType = {
   todos: TodoType[];
-  filters: string[];
-  activeFilter: number;
+  activeFilter: string;
 };
 
-export default function TodoList({
-  todos,
-  filters,
-  activeFilter,
-}: TodoListType) {
+export default function TodoList({ todos, activeFilter }: TodoListType) {
   function handleClearCompleted() {
     console.log('HANDLE CLEAR');
   }
@@ -21,9 +16,9 @@ export default function TodoList({
       {todos
         .filter(
           todo =>
-            activeFilter === 0 // All
+            activeFilter === 'All' // All
               ? todo
-              : activeFilter === 1 // Active
+              : activeFilter === 'Active' // Active
               ? !todo.isCompleted
               : todo.isCompleted, // Completed
         )
