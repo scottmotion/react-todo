@@ -6,6 +6,7 @@ type TodoListType = {
   activeFilter: string;
   deleteTodo: any;
   toggleIsCompleted: any;
+  clearCompleted: any;
 };
 
 export default function TodoList({
@@ -13,9 +14,11 @@ export default function TodoList({
   activeFilter,
   deleteTodo,
   toggleIsCompleted,
+  clearCompleted,
 }: TodoListType) {
   function handleClearCompleted() {
     console.log('HANDLE CLEAR');
+    clearCompleted();
   }
 
   return (

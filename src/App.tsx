@@ -74,6 +74,11 @@ function App() {
     setTodos(todos.filter(t => todos.indexOf(t) !== index));
   }
 
+  function clearCompleted() {
+    console.log('CLEAR COMPLETED');
+    setTodos(todos.filter(t => t.isCompleted !== true));
+  }
+
   return (
     <ThemeContext.Provider value={theme}>
       <main className="flex flex-col items-center">
@@ -90,6 +95,7 @@ function App() {
             activeFilter={activeFilter}
             deleteTodo={deleteTodo}
             toggleIsCompleted={toggleIsCompleted}
+            clearCompleted={clearCompleted}
           />
           <TodoFilters
             filters={filters}
