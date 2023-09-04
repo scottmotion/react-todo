@@ -3,15 +3,18 @@ import { ReactComponent as CheckIcon } from '/src/assets/icon-check.svg';
 import { ReactComponent as CrossIcon } from '/src/assets/icon-cross.svg';
 
 type TodoProps = {
+  index: number;
   todo: TodoType;
+  deleteTodo: any;
 };
 
-export default function Todo({ todo }: TodoProps) {
+export default function Todo({ index, todo, deleteTodo }: TodoProps) {
   function toggleIsCompleted() {
     console.log('TOGGLE IS COMPLETED');
   }
   function handleDeleteTodo() {
-    console.log('HANDLE DELETE TODO');
+    console.log('HANDLE DELETE TODO: ', index);
+    deleteTodo(index);
   }
   return (
     <div className="flex items-center border-b border-very-light-gray-blue px-3 dark:border-very-dark-gray-blue-2">

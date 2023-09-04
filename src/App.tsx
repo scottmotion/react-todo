@@ -55,6 +55,11 @@ function App() {
     setTodos(prevTodos => [...prevTodos, newTodo]);
   }
 
+  function deleteTodo(index: number) {
+    console.log('DELETE TODO: ', index);
+    setTodos(todos.filter((t, i) => i !== index));
+  }
+
   return (
     <ThemeContext.Provider value={theme}>
       <main className="flex flex-col items-center">
@@ -66,7 +71,11 @@ function App() {
             <ThemeToggle toggleTheme={toggleTheme} />
           </AppHeader>
           <NewTodo addTodo={addTodo} />
-          <TodoList todos={todos} activeFilter={activeFilter} />
+          <TodoList
+            todos={todos}
+            activeFilter={activeFilter}
+            deleteTodo={deleteTodo}
+          />
           <TodoFilters
             filters={filters}
             activeFilter={activeFilter}

@@ -4,9 +4,14 @@ import { TodoType } from '../Types/TodoType';
 type TodoListType = {
   todos: TodoType[];
   activeFilter: string;
+  deleteTodo: any;
 };
 
-export default function TodoList({ todos, activeFilter }: TodoListType) {
+export default function TodoList({
+  todos,
+  activeFilter,
+  deleteTodo,
+}: TodoListType) {
   function handleClearCompleted() {
     console.log('HANDLE CLEAR');
   }
@@ -23,7 +28,7 @@ export default function TodoList({ todos, activeFilter }: TodoListType) {
               : todo.isCompleted, // Completed
         )
         .map((todo, index) => (
-          <Todo key={index} todo={todo} />
+          <Todo key={index} index={index} todo={todo} deleteTodo={deleteTodo} />
         ))}
       <div className="flex w-full items-center justify-between p-3">
         <p>
