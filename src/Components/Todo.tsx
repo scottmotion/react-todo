@@ -6,20 +6,27 @@ type TodoProps = {
   index: number;
   todo: TodoType;
   deleteTodo: any;
+  toggleIsCompleted: any;
 };
 
-export default function Todo({ index, todo, deleteTodo }: TodoProps) {
-  function toggleIsCompleted() {
-    console.log('TOGGLE IS COMPLETED');
+export default function Todo({
+  index,
+  todo,
+  deleteTodo,
+  toggleIsCompleted,
+}: TodoProps) {
+  function handleToggleCompleted() {
+    // console.log('TOGGLE IS COMPLETED: ', index);
+    toggleIsCompleted(index);
   }
   function handleDeleteTodo() {
-    console.log('HANDLE DELETE TODO: ', index);
+    // console.log('HANDLE DELETE TODO: ', index);
     deleteTodo(index);
   }
   return (
     <div className="flex items-center border-b border-very-light-gray-blue px-3 dark:border-very-dark-gray-blue-2">
       <button
-        onClick={toggleIsCompleted}
+        onClick={handleToggleCompleted}
         className={`aspect-square shrink-0 rounded-full border border-very-light-gray-blue p-1.5 dark:border-very-dark-gray-blue-2 ${
           todo.isCompleted
             ? 'bg-gradient-to-br from-check-bg-start to-check-bg-end stroke-white'

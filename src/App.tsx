@@ -55,9 +55,23 @@ function App() {
     setTodos(prevTodos => [...prevTodos, newTodo]);
   }
 
+  function toggleIsCompleted(index: number) {
+    console.log('TOGGLE TODO: ', index);
+
+    const nextTodos = todos.map((t, i) => {
+      if (i === index) {
+        return { ...t, isCompleted: !t.isCompleted };
+      } else {
+        return t;
+      }
+    });
+
+    setTodos(nextTodos);
+  }
+
   function deleteTodo(index: number) {
     console.log('DELETE TODO: ', index);
-    setTodos(todos.filter((t, i) => i !== index));
+    setTodos(todos.filter(t => todos.indexOf(t) !== index));
   }
 
   return (
@@ -75,6 +89,7 @@ function App() {
             todos={todos}
             activeFilter={activeFilter}
             deleteTodo={deleteTodo}
+            toggleIsCompleted={toggleIsCompleted}
           />
           <TodoFilters
             filters={filters}
