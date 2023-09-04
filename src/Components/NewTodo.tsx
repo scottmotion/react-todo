@@ -6,7 +6,7 @@ type NewTodoProps = {
 export default function NewTodo({ addTodo }: NewTodoProps) {
   const [newTodo, setNewTodo] = useState({ title: '', isCompleted: false });
 
-  function handleChange(event) {
+  function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
     console.log('HANDLE CHANGE');
     const { value } = event.target;
     setNewTodo(prevNewTodo => ({
@@ -15,7 +15,7 @@ export default function NewTodo({ addTodo }: NewTodoProps) {
     }));
   }
 
-  function handleKeyDown(event) {
+  function handleKeyDown(event: React.KeyboardEvent<HTMLInputElement>) {
     if (event.key === 'Enter') {
       handleSubmit();
     }
@@ -24,6 +24,7 @@ export default function NewTodo({ addTodo }: NewTodoProps) {
   function handleSubmit() {
     console.log('HANDLE SUBMIT');
     addTodo(newTodo);
+    setNewTodo({ title: '', isCompleted: false });
   }
 
   return (
@@ -32,8 +33,8 @@ export default function NewTodo({ addTodo }: NewTodoProps) {
         type="text"
         placeholder="Create new todo..."
         className="w-full rounded-md bg-white p-3 dark:bg-very-dark-desaturated-blue dark:text-white"
-        onChange={handleChange}
-        onKeyDown={handleKeyDown}
+        onChange={e => handleChange(e)}
+        onKeyDown={e => handleKeyDown(e)}
         value={newTodo.title}
       />
     </div>
