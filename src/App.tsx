@@ -5,6 +5,7 @@ import NewTodo from './Components/NewTodo';
 import { TodoType } from './Types/TodoType';
 import TodoList from './Components/TodoList';
 import TodoFilters from './Components/TodoFilters';
+import TodoFiltersMobile from './Components/TodoFiltersMobile';
 
 import './App.css';
 
@@ -96,7 +97,13 @@ function App() {
             deleteTodo={deleteTodo}
             toggleIsCompleted={toggleIsCompleted}
             clearCompleted={clearCompleted}
-          />
+          >
+            <TodoFiltersMobile
+              filters={filters}
+              activeFilter={activeFilter}
+              setActiveFilter={setActiveFilter}
+            />
+          </TodoList>
           <TodoFilters
             filters={filters}
             activeFilter={activeFilter}

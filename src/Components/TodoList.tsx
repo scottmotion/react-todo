@@ -1,7 +1,9 @@
 import Todo from './Todo';
 import { TodoType } from '../Types/TodoType';
+import { ReactElement } from 'react';
 
 type TodoListType = {
+  children: ReactElement;
   todos: TodoType[];
   activeFilter: string;
   deleteTodo: any;
@@ -10,6 +12,7 @@ type TodoListType = {
 };
 
 export default function TodoList({
+  children,
   todos,
   activeFilter,
   deleteTodo,
@@ -45,6 +48,7 @@ export default function TodoList({
         <p>
           {todos.filter(todo => todo.isCompleted === false).length} items left
         </p>
+        {children}
         <button onClick={handleClearCompleted}>Clear Completed</button>
       </div>
     </div>
