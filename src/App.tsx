@@ -42,7 +42,7 @@ function App() {
     }
   }, [theme]);
 
-  function toggleTheme(e: MouseEvent<HTMLButtonElement>) {
+  function toggleTheme(e: MouseEvent<HTMLButtonElement>): void {
     e.stopPropagation();
     if (theme === 'dark') {
       setTheme('light');

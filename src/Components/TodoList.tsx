@@ -8,7 +8,7 @@ type TodoListType = {
   activeFilter: string;
   deleteTodo: (arg0: number) => void;
   toggleIsCompleted: (arg0: number) => void;
-  clearCompleted: any;
+  clearCompleted: () => void;
 };
 
 export default function TodoList({
