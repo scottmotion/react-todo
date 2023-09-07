@@ -1,13 +1,13 @@
 import Todo from './Todo';
 import { TodoType } from '../Types/TodoType';
-import { ReactElement } from 'react';
+import { ReactNode } from 'react';
 
 type TodoListType = {
-  children: ReactElement;
+  children: ReactNode;
   todos: TodoType[];
   activeFilter: string;
-  deleteTodo: any;
-  toggleIsCompleted: any;
+  deleteTodo: (arg0: number) => void;
+  toggleIsCompleted: (arg0: number) => void;
   clearCompleted: any;
 };
 

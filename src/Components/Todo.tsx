@@ -5,8 +5,8 @@ import { ReactComponent as CrossIcon } from '/src/assets/icon-cross.svg';
 type TodoProps = {
   index: number;
   todo: TodoType;
-  deleteTodo: any;
-  toggleIsCompleted: any;
+  deleteTodo: (arg0: number) => void;
+  toggleIsCompleted: (arg0: number) => void;
 };
 
 export default function Todo({

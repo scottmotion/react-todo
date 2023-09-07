@@ -1,6 +1,7 @@
 import { useState } from 'react';
+import { TodoType } from '../Types/TodoType';
 type NewTodoProps = {
-  addTodo: any;
+  addTodo: (newTodo: TodoType) => void;
 };
 
 export default function NewTodo({ addTodo }: NewTodoProps) {

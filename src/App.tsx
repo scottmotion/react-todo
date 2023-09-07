@@ -51,7 +51,7 @@ function App() {
     }
   }
 
-  function addTodo(newTodo: TodoType) {
+  function addTodo(newTodo: TodoType): void {
     console.log('ADD TODO: ', newTodo);
     setTodos(prevTodos => [...prevTodos, newTodo]);
   }
@@ -70,12 +70,12 @@ function App() {
     setTodos(nextTodos);
   }
 
-  function deleteTodo(index: number) {
+  function deleteTodo(index: number): void {
     console.log('DELETE TODO: ', index);
     setTodos(todos.filter(t => todos.indexOf(t) !== index));
   }
 
-  function clearCompleted() {
+  function clearCompleted(): void {
     console.log('CLEAR COMPLETED');
     setTodos(todos.filter(t => t.isCompleted !== true));
   }
