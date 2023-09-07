@@ -10,7 +10,7 @@ export default function TodoFilters({
   setActiveFilter,
 }: TodoFiltersProps) {
   return (
-    <div className="flex w-full items-center justify-center gap-6 rounded-md bg-white p-3 dark:bg-very-dark-desaturated-blue dark:text-white">
+    <div className="flex w-full items-center justify-center gap-6 rounded-md bg-white p-3 dark:bg-very-dark-desaturated-blue dark:text-white md:hidden">
       {filters.map((filter, index) => (
         <button
           className={`${
