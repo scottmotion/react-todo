@@ -14,9 +14,7 @@ export default function TodoFiltersMobile({
       <>
         {filters.map((filter, index) => (
           <button
-            className={`${
-              filter === activeFilter ? 'text-bright-blue' : ''
-            } text-lg md:text-sm`}
+            className={`${filter === activeFilter ? 'text-bright-blue' : ''} `}
             key={index}
             onClick={() => setActiveFilter(filter)}
           >
