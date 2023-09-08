@@ -52,13 +52,10 @@ function App() {
   }
 
   function addTodo(newTodo: TodoType): void {
-    console.log('ADD TODO: ', newTodo);
     setTodos(prevTodos => [...prevTodos, newTodo]);
   }
 
   function toggleIsCompleted(index: number) {
-    console.log('TOGGLE TODO: ', index);
-
     const nextTodos = todos.map((t, i) => {
       if (i === index) {
         return { ...t, isCompleted: !t.isCompleted };
@@ -71,19 +68,17 @@ function App() {
   }
 
   function deleteTodo(index: number): void {
-    console.log('DELETE TODO: ', index);
     setTodos(todos.filter(t => todos.indexOf(t) !== index));
   }
 
   function clearCompleted(): void {
-    console.log('CLEAR COMPLETED');
     setTodos(todos.filter(t => t.isCompleted !== true));
   }
 
   return (
     <ThemeContext.Provider value={theme}>
       <main className="flex flex-col items-center">
-        <section className="relative flex w-full">
+        <section className="relative flex w-full select-none">
           <img className="w-full content-header-mobile-light dark:content-header-mobile-dark md:content-header-desktop-light md:dark:content-header-desktop-dark"></img>
         </section>
         <section className="absolute mt-10 flex w-full max-w-xl flex-col gap-y-6 px-6 md:mt-20">
