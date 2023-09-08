@@ -1,7 +1,7 @@
 import { createContext, useState, useEffect, MouseEvent } from 'react';
 import AppHeader from './Components/AppHeader';
 import ThemeToggle from './Components/ThemeToggle';
-import NewTodo from './Components/NewTodo';
+import NewTodoInput from './Components/NewTodoInput';
 import { TodoType } from './Types/TodoType';
 import TodoList from './Components/TodoList';
 import TodoFilters from './Components/TodoFilters';
@@ -90,7 +90,7 @@ function App() {
           <AppHeader>
             <ThemeToggle toggleTheme={toggleTheme} />
           </AppHeader>
-          <NewTodo addTodo={addTodo} />
+          <NewTodoInput addTodo={addTodo} />
           <TodoList
             todos={todos}
             activeFilter={activeFilter}
