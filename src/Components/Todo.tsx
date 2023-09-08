@@ -16,11 +16,9 @@ export default function Todo({
   toggleIsCompleted,
 }: TodoProps) {
   function handleToggleCompleted() {
-    // console.log('TOGGLE IS COMPLETED: ', index);
     toggleIsCompleted(index);
   }
   function handleDeleteTodo() {
-    // console.log('HANDLE DELETE TODO: ', index);
     deleteTodo(index);
   }
   return (

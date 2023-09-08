@@ -20,7 +20,6 @@ export default function TodoList({
   clearCompleted,
 }: TodoListType) {
   function handleClearCompleted() {
-    console.log('HANDLE CLEAR');
     clearCompleted();
   }
 

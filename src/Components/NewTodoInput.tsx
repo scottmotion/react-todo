@@ -8,7 +8,6 @@ export default function NewTodoInput({ addTodo }: NewTodoProps) {
   const [newTodo, setNewTodo] = useState({ title: '', isCompleted: false });
 
   function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
-    console.log('HANDLE CHANGE');
     const { value } = event.target;
     setNewTodo(prevNewTodo => ({
       ...prevNewTodo,
@@ -23,7 +22,6 @@ export default function NewTodoInput({ addTodo }: NewTodoProps) {
   }
 
   function handleSubmit() {
-    console.log('HANDLE SUBMIT');
     addTodo(newTodo);
     setNewTodo({ title: '', isCompleted: false });
   }
