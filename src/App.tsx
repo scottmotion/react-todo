@@ -8,7 +8,7 @@ import TodoFilters from './Components/TodoFilters';
 import TodoFiltersMobile from './Components/TodoFiltersMobile';
 import { todoData } from './data';
 
-import { v4 as uuidv4 } from 'uuid';
+// import { v4 as uuidv4 } from 'uuid';
 
 import './App.css';
 
@@ -53,9 +53,9 @@ function App() {
     setTodos(prevTodos => [...prevTodos, newTodo]);
   }
 
-  function toggleIsCompleted(index: number) {
-    const nextTodos = todos.map((t, i) => {
-      if (i === index) {
+  function toggleIsCompleted(id: string) {
+    const nextTodos = todos.map(t => {
+      if (t.id === id) {
         return { ...t, isCompleted: !t.isCompleted };
       } else {
         return t;

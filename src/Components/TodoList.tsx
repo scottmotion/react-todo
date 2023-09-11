@@ -7,7 +7,7 @@ type TodoListType = {
   todos: TodoType[];
   activeFilter: string;
   deleteTodo: (arg0: string) => void;
-  toggleIsCompleted: (arg0: number) => void;
+  toggleIsCompleted: (arg0: string) => void;
   clearCompleted: () => void;
 };
 

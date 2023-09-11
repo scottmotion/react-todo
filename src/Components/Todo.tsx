@@ -16,11 +16,10 @@ export default function Todo({
   toggleIsCompleted,
 }: TodoProps) {
   function handleToggleCompleted() {
-    toggleIsCompleted(index);
+    toggleIsCompleted(todo.id);
   }
   function handleDeleteTodo() {
     deleteTodo(todo.id);
-    console.log(todo.id);
   }
   return (
     <div className="flex items-center border-b border-very-light-gray-blue px-3 dark:border-very-dark-gray-blue-2">
