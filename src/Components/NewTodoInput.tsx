@@ -1,11 +1,18 @@
 import { useState } from 'react';
 import { TodoType } from '../Types/TodoType';
+import { v4 as uuidv4 } from 'uuid';
+
 type NewTodoProps = {
   addTodo: (newTodo: TodoType) => void;
 };
 
 export default function NewTodoInput({ addTodo }: NewTodoProps) {
-  const [newTodo, setNewTodo] = useState({ title: '', isCompleted: false });
+  const defaultTodo: TodoType = {
+    id: uuidv4(),
+    title: '',
+    isCompleted: false,
+  };
+  const [newTodo, setNewTodo] = useState(defaultTodo);
 
   function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
     const { value } = event.target;
@@ -22,8 +29,9 @@ export default function NewTodoInput({ addTodo }: NewTodoProps) {
   }
 
   function handleSubmit() {
+    console.log('newTodo: ', newTodo);
     addTodo(newTodo);
-    setNewTodo({ title: '', isCompleted: false });
+    setNewTodo(defaultTodo);
   }
 
   return (

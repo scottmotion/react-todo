@@ -6,8 +6,8 @@ type TodoListType = {
   children: ReactNode;
   todos: TodoType[];
   activeFilter: string;
-  deleteTodo: (arg0: number) => void;
-  toggleIsCompleted: (arg0: number) => void;
+  deleteTodo: (arg0: string) => void;
+  toggleIsCompleted: (arg0: string) => void;
   clearCompleted: () => void;
 };
 
@@ -34,10 +34,9 @@ export default function TodoList({
               ? !todo.isCompleted
               : todo.isCompleted, // Completed
         )
-        .map((todo, index) => (
+        .map(todo => (
           <Todo
-            key={index}
-            index={index}
+            key={todo.id}
             todo={todo}
             deleteTodo={deleteTodo}
             toggleIsCompleted={toggleIsCompleted}

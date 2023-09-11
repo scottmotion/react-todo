@@ -6,19 +6,13 @@ import { TodoType } from './Types/TodoType';
 import TodoList from './Components/TodoList';
 import TodoFilters from './Components/TodoFilters';
 import TodoFiltersMobile from './Components/TodoFiltersMobile';
+import { todoData } from './data';
 
 import './App.css';
 
 export const ThemeContext = createContext('light');
 
-const myTodos: TodoType[] = [
-  { title: 'Todo 1', isCompleted: true },
-  { title: 'Todo 2', isCompleted: false },
-  { title: 'Todo 3', isCompleted: false },
-  { title: 'Todo 4', isCompleted: false },
-  { title: 'Todo 5', isCompleted: false },
-  { title: 'Todo 6', isCompleted: false },
-];
+const myTodos: TodoType[] = todoData;
 
 function App() {
   const [theme, setTheme] = useState('light');
@@ -55,9 +49,9 @@ function App() {
     setTodos(prevTodos => [...prevTodos, newTodo]);
   }
 
-  function toggleIsCompleted(index: number) {
-    const nextTodos = todos.map((t, i) => {
-      if (i === index) {
+  function toggleIsCompleted(id: string) {
+    const nextTodos = todos.map(t => {
+      if (t.id === id) {
         return { ...t, isCompleted: !t.isCompleted };
       } else {
         return t;
@@ -67,8 +61,8 @@ function App() {
     setTodos(nextTodos);
   }
 
-  function deleteTodo(index: number): void {
-    setTodos(todos.filter(t => todos.indexOf(t) !== index));
+  function deleteTodo(id: string): void {
+    setTodos(todos.filter(t => t.id !== id));
   }
 
   function clearCompleted(): void {

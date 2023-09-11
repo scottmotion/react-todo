@@ -3,23 +3,21 @@ import { ReactComponent as CheckIcon } from '/src/assets/icon-check.svg';
 import { ReactComponent as CrossIcon } from '/src/assets/icon-cross.svg';
 
 type TodoProps = {
-  index: number;
   todo: TodoType;
-  deleteTodo: (arg0: number) => void;
-  toggleIsCompleted: (arg0: number) => void;
+  deleteTodo: (arg0: string) => void;
+  toggleIsCompleted: (arg0: string) => void;
 };
 
 export default function Todo({
-  index,
   todo,
   deleteTodo,
   toggleIsCompleted,
 }: TodoProps) {
   function handleToggleCompleted() {
-    toggleIsCompleted(index);
+    toggleIsCompleted(todo.id);
   }
   function handleDeleteTodo() {
-    deleteTodo(index);
+    deleteTodo(todo.id);
   }
   return (
     <div className="flex items-center border-b border-very-light-gray-blue px-3 dark:border-very-dark-gray-blue-2">
