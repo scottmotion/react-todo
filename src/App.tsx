@@ -6,6 +6,7 @@ import { TodoType } from './Types/TodoType';
 import TodoList from './Components/TodoList';
 import TodoFilters from './Components/TodoFilters';
 import TodoFiltersMobile from './Components/TodoFiltersMobile';
+import { todoData } from './data';
 
 import { v4 as uuidv4 } from 'uuid';
 
@@ -13,14 +14,7 @@ import './App.css';
 
 export const ThemeContext = createContext('light');
 
-const myTodos: TodoType[] = [
-  { title: 'Todo 1', isCompleted: true },
-  { title: 'Todo 2', isCompleted: false },
-  { title: 'Todo 3', isCompleted: false },
-  { title: 'Todo 4', isCompleted: false },
-  { title: 'Todo 5', isCompleted: false },
-  { title: 'Todo 6', isCompleted: false },
-];
+const myTodos: TodoType[] = todoData;
 
 function App() {
   const [theme, setTheme] = useState('light');
@@ -29,6 +23,7 @@ function App() {
   const [activeFilter, setActiveFilter] = useState('All');
 
   console.log(uuidv4());
+
   // Check if client prefers dark mode
   // useEffect(() => {
   //   if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
