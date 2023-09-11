@@ -8,8 +8,6 @@ import TodoFilters from './Components/TodoFilters';
 import TodoFiltersMobile from './Components/TodoFiltersMobile';
 import { todoData } from './data';
 
-// import { v4 as uuidv4 } from 'uuid';
-
 import './App.css';
 
 export const ThemeContext = createContext('light');
@@ -21,8 +19,6 @@ function App() {
   const [todos, setTodos] = useState(myTodos);
   const filters: string[] = ['All', 'Active', 'Completed'];
   const [activeFilter, setActiveFilter] = useState('All');
-
-  // console.log(uuidv4());
 
   // Check if client prefers dark mode
   // useEffect(() => {

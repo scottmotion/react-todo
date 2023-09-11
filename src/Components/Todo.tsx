@@ -3,14 +3,12 @@ import { ReactComponent as CheckIcon } from '/src/assets/icon-check.svg';
 import { ReactComponent as CrossIcon } from '/src/assets/icon-cross.svg';
 
 type TodoProps = {
-  index: number;
   todo: TodoType;
   deleteTodo: (arg0: string) => void;
-  toggleIsCompleted: (arg0: number) => void;
+  toggleIsCompleted: (arg0: string) => void;
 };
 
 export default function Todo({
-  index,
   todo,
   deleteTodo,
   toggleIsCompleted,

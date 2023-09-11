@@ -34,10 +34,9 @@ export default function TodoList({
               ? !todo.isCompleted
               : todo.isCompleted, // Completed
         )
-        .map((todo, index) => (
+        .map(todo => (
           <Todo
-            key={index}
-            index={index}
+            key={todo.id}
             todo={todo}
             deleteTodo={deleteTodo}
             toggleIsCompleted={toggleIsCompleted}
