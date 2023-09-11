@@ -28,11 +28,11 @@ export default function TodoList({
       {todos
         .filter(
           todo =>
-            activeFilter === 'All' // All
-              ? todo
+            activeFilter === 'Completed' // Completed
+              ? todo.isCompleted
               : activeFilter === 'Active' // Active
               ? !todo.isCompleted
-              : todo.isCompleted, // Completed
+              : todo, // All
         )
         .map(todo => (
           <Todo
