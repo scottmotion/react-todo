@@ -6,7 +6,7 @@ type TodoListType = {
   children: ReactNode;
   todos: TodoType[];
   activeFilter: string;
-  deleteTodo: (arg0: number) => void;
+  deleteTodo: (arg0: string) => void;
   toggleIsCompleted: (arg0: number) => void;
   clearCompleted: () => void;
 };

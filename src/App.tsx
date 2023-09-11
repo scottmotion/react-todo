@@ -22,7 +22,7 @@ function App() {
   const filters: string[] = ['All', 'Active', 'Completed'];
   const [activeFilter, setActiveFilter] = useState('All');
 
-  console.log(uuidv4());
+  // console.log(uuidv4());
 
   // Check if client prefers dark mode
   // useEffect(() => {
@@ -65,8 +65,8 @@ function App() {
     setTodos(nextTodos);
   }
 
-  function deleteTodo(index: number): void {
-    setTodos(todos.filter(t => todos.indexOf(t) !== index));
+  function deleteTodo(id: string): void {
+    setTodos(todos.filter(t => t.id !== id));
   }
 
   function clearCompleted(): void {
