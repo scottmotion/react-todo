@@ -82,6 +82,7 @@ function App() {
           <NewTodoInput addTodo={addTodo} />
           <TodoList
             todos={todos}
+            setTodos={setTodos}
             activeFilter={activeFilter}
             deleteTodo={deleteTodo}
             toggleIsCompleted={toggleIsCompleted}
