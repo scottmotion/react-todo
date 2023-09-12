@@ -12,7 +12,6 @@ type TodoProps = {
   toggleIsCompleted: (arg0: string) => void;
 };
 export const Todo2 = forwardRef(({ ...props }: TodoProps, ref) => {
-  //   console.log(props.todo);
   function handleToggleCompleted() {
     props.toggleIsCompleted(props.todo.id);
   }
@@ -20,9 +19,6 @@ export const Todo2 = forwardRef(({ ...props }: TodoProps, ref) => {
     props.deleteTodo(props.todo.id);
   }
   return (
-    // <div {...props} ref={ref}>
-    //   {props.todo.id}
-    // </div>
     <div
       style={props.style}
       className="flex items-center border-b border-very-light-gray-blue bg-white px-3 dark:border-very-dark-gray-blue-2 dark:bg-very-dark-desaturated-blue"
