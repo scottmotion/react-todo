@@ -5,17 +5,22 @@ import { Todo2 } from './Todo2';
 
 export function SortableItem(props) {
   const { attributes, listeners, setNodeRef, transform, transition } =
-    useSortable({ id: props.todo.id });
+    useSortable({ id: props.id });
 
-  const style = {
+  let style = {
     transform: CSS.Transform.toString(transform),
     transition,
     cursor: 'grab',
   };
 
+  if (props.id === props.activeId) {
+    // style.opacity = '.25';
+    style.visibility = 'hidden';
+  }
+
   return (
     <Todo2
-      id={props.todo.id}
+      id={props.id}
       ref={setNodeRef}
       style={style}
       todo={props.todo}

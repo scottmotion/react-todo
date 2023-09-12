@@ -53,19 +53,19 @@ export default function TodoList({
   }
   function handleDragStart(event: any) {
     const { active } = event;
-    console.log('Drag Start: active: ', active);
+    // console.log('Drag Start: active: ', active);
     setActiveId(active.id);
   }
 
   function handleDragEnd(event: any) {
     const { active, over } = event;
-    console.log('Drag End : active: ', active, ' over: ', over);
+    // console.log('Drag End : active: ', active, ' over: ', over);
     if (active.id !== over.id) {
       setTodos((todos: TodoType[]) => {
         const oldIndex = todos.findIndex(todo => todo.id === active.id);
         const newIndex = todos.findIndex(todo => todo.id === over.id);
-        console.log('Old index: ', oldIndex);
-        console.log('New index: ', newIndex);
+        // console.log('Old index: ', oldIndex);
+        // console.log('New index: ', newIndex);
 
         return arrayMove(todos, oldIndex, newIndex);
       });
@@ -94,6 +94,8 @@ export default function TodoList({
             .map(todo => (
               <SortableItem
                 key={todo.id}
+                activeId={activeId}
+                id={todo.id}
                 todo={todo}
                 deleteTodo={deleteTodo}
                 toggleIsCompleted={toggleIsCompleted}

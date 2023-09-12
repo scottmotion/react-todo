@@ -13,13 +13,18 @@ type TodoProps = {
 };
 export const Todo2 = forwardRef(({ ...props }: TodoProps, ref) => {
   function handleToggleCompleted() {
-    props.toggleIsCompleted(props.todo.id);
+    props.toggleIsCompleted(props.id);
   }
   function handleDeleteTodo() {
-    props.deleteTodo(props.todo.id);
+    props.deleteTodo(props.id);
   }
+  // let style = {
+  //   border: '1px solid white',
+  //   cursor: 'grabbing',
+  // };
   return (
     <div
+      // style={props.style ? props.style : { style }}
       style={props.style}
       className="flex items-center border-b border-very-light-gray-blue bg-white px-3 dark:border-very-dark-gray-blue-2 dark:bg-very-dark-desaturated-blue"
     >
