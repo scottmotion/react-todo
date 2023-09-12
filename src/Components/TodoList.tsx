@@ -105,6 +105,8 @@ export default function TodoList({
             <Todo2
               id={activeId}
               todo={todos[todos.findIndex(todo => todo.id === activeId)]}
+              deleteTodo={deleteTodo}
+              toggleIsCompleted={toggleIsCompleted}
             />
           ) : null}
         </DragOverlay>

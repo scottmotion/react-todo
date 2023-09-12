@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react';
+import { forwardRef } from 'react';
 import { ReactComponent as CheckIcon } from '/src/assets/icon-check.svg';
 import { ReactComponent as CrossIcon } from '/src/assets/icon-cross.svg';
 import { TodoType } from '../Types/TodoType';
@@ -8,8 +8,8 @@ type TodoProps = {
   todo: TodoType;
   attributes?: any;
   listeners?: any;
-  deleteTodo?: (arg0: string) => void;
-  toggleIsCompleted?: (arg0: string) => void;
+  deleteTodo: (arg0: string) => void;
+  toggleIsCompleted: (arg0: string) => void;
 };
 export const Todo2 = forwardRef(({ ...props }: TodoProps, ref) => {
   //   console.log(props.todo);
