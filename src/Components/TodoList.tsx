@@ -14,12 +14,18 @@ import {
   useSensor,
   useSensors,
 } from '@dnd-kit/core';
+
 import {
   arrayMove,
   SortableContext,
   sortableKeyboardCoordinates,
   verticalListSortingStrategy,
 } from '@dnd-kit/sortable';
+
+import {
+  restrictToVerticalAxis,
+  restrictToParentElement,
+} from '@dnd-kit/modifiers';
 
 type TodoListType = {
   children: ReactNode;
@@ -80,6 +86,7 @@ export default function TodoList({
         collisionDetection={closestCenter}
         onDragStart={handleDragStart}
         onDragEnd={handleDragEnd}
+        modifiers={[restrictToVerticalAxis]}
       >
         <SortableContext items={todos} strategy={verticalListSortingStrategy}>
           {todos
@@ -102,7 +109,7 @@ export default function TodoList({
               />
             ))}
         </SortableContext>
-        <DragOverlay>
+        <DragOverlay modifiers={[restrictToParentElement]}>
           {activeId ? (
             <Todo2
               id={activeId}

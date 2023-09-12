@@ -18,14 +18,21 @@ export const Todo2 = forwardRef(({ ...props }: TodoProps, ref) => {
   function handleDeleteTodo() {
     props.deleteTodo(props.id);
   }
-  // let style = {
-  //   border: '1px solid white',
-  //   cursor: 'grabbing',
-  // };
+  let newStyle = {};
+
+  if (props.style) {
+    newStyle = props.style;
+  } else {
+    newStyle.border = '2px solid blue';
+    newStyle.cursor = 'grabbing';
+  }
+
   return (
     <div
-      // style={props.style ? props.style : { style }}
-      style={props.style}
+      ref={ref}
+      // {...props.attributes}
+      // {...props.listeners}
+      style={newStyle}
       className="flex items-center border-b border-very-light-gray-blue bg-white px-3 dark:border-very-dark-gray-blue-2 dark:bg-very-dark-desaturated-blue"
     >
       <button
@@ -42,8 +49,9 @@ export const Todo2 = forwardRef(({ ...props }: TodoProps, ref) => {
       <input
         {...props.attributes}
         {...props.listeners}
-        ref={ref}
+        // ref={ref}
         type="text"
+        style={{ cursor: 'grab' }}
         placeholder="Create new todo..."
         value={props.todo.title}
         disabled
