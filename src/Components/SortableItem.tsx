@@ -1,9 +1,16 @@
 import { useSortable } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
+import { TodoType } from '../Types/TodoType';
 
 import { Todo2 } from './Todo2';
-
-export function SortableItem(props) {
+type SortableItemProps = {
+  activeId: string | null;
+  id: string;
+  todo: TodoType;
+  deleteTodo: (arg0: string) => void;
+  toggleIsCompleted: (arg0: string) => void;
+};
+export function SortableItem(props: SortableItemProps) {
   const {
     attributes,
     listeners,
@@ -13,7 +20,7 @@ export function SortableItem(props) {
     isDragging,
   } = useSortable({ id: props.id });
 
-  let style = {
+  let style: { [propName: string]: any } = {
     transform: CSS.Transform.toString(transform),
     transition,
     cursor: 'grab',

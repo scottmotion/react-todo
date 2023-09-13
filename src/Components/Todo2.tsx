@@ -1,4 +1,4 @@
-import { forwardRef } from 'react';
+import { RefObject, forwardRef } from 'react';
 import { ReactComponent as CheckIcon } from '/src/assets/icon-check.svg';
 import { ReactComponent as CrossIcon } from '/src/assets/icon-cross.svg';
 import { TodoType } from '../Types/TodoType';
@@ -18,7 +18,7 @@ export const Todo2 = forwardRef(({ ...props }: TodoProps, ref) => {
   function handleDeleteTodo() {
     props.deleteTodo(props.id);
   }
-  let newStyle = {};
+  let newStyle: { [propName: string]: any } = {};
 
   if (props.style) {
     newStyle = props.style;
@@ -29,7 +29,7 @@ export const Todo2 = forwardRef(({ ...props }: TodoProps, ref) => {
 
   return (
     <div
-      ref={ref}
+      ref={ref as RefObject<HTMLDivElement>}
       // {...props.attributes}
       // {...props.listeners}
       style={newStyle}
