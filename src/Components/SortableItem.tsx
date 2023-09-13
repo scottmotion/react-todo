@@ -27,14 +27,12 @@ export function SortableItem(props: SortableItemProps) {
   };
 
   // if (props.id === props.activeId) {
-  //   // style.opacity = '.25';
   //   style.visibility = 'hidden';
   // }
 
-  // if (isDragging) {
-  //   // console.log('Dragging');
-  //   style.visibility = 'hidden';
-  // }
+  if (isDragging) {
+    style.visibility = 'hidden';
+  }
   return (
     <Todo2
       id={props.id}

@@ -23,10 +23,8 @@ export const Todo2 = forwardRef(({ ...props }: TodoProps, ref) => {
 
   if (props.style) {
     newStyle = props.style;
-  }
-
-  if (props.isDragging) {
-    newStyle.visibility = 'hidden';
+  } else {
+    // newStyle.visibility = 'hidden';
     newStyle.border = '2px solid blue';
     newStyle.cursor = 'grabbing';
   }
