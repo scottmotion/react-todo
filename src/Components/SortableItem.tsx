@@ -31,10 +31,10 @@ export function SortableItem(props: SortableItemProps) {
   //   style.visibility = 'hidden';
   // }
 
-  if (isDragging) {
-    // console.log('Dragging');
-    style.visibility = 'hidden';
-  }
+  // if (isDragging) {
+  //   // console.log('Dragging');
+  //   style.visibility = 'hidden';
+  // }
   return (
     <Todo2
       id={props.id}
@@ -45,6 +45,7 @@ export function SortableItem(props: SortableItemProps) {
       toggleIsCompleted={props.toggleIsCompleted}
       attributes={attributes}
       listeners={listeners}
+      isDragging={isDragging}
     ></Todo2>
   );
 }

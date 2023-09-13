@@ -4,12 +4,13 @@ import { ReactComponent as CrossIcon } from '/src/assets/icon-cross.svg';
 import { TodoType } from '../Types/TodoType';
 type TodoProps = {
   id: string;
-  style?: any;
+  style?: { [propName: string]: any };
   todo: TodoType;
   attributes?: any;
   listeners?: any;
   deleteTodo: (arg0: string) => void;
   toggleIsCompleted: (arg0: string) => void;
+  isDragging?: boolean;
 };
 export const Todo2 = forwardRef(({ ...props }: TodoProps, ref) => {
   function handleToggleCompleted() {
@@ -22,7 +23,10 @@ export const Todo2 = forwardRef(({ ...props }: TodoProps, ref) => {
 
   if (props.style) {
     newStyle = props.style;
-  } else {
+  }
+
+  if (props.isDragging) {
+    newStyle.visibility = 'hidden';
     newStyle.border = '2px solid blue';
     newStyle.cursor = 'grabbing';
   }
