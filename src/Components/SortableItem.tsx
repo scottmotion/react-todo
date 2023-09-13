@@ -23,16 +23,12 @@ export function SortableItem(props: SortableItemProps) {
   let style: { [propName: string]: any } = {
     transform: CSS.Transform.toString(transform),
     transition,
-    cursor: 'grab',
   };
-
-  // if (props.id === props.activeId) {
-  //   style.visibility = 'hidden';
-  // }
 
   if (isDragging) {
     style.visibility = 'hidden';
   }
+
   return (
     <Todo2
       id={props.id}

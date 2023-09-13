@@ -4,7 +4,7 @@ import { ReactComponent as CrossIcon } from '/src/assets/icon-cross.svg';
 import { TodoType } from '../Types/TodoType';
 type TodoProps = {
   id: string;
-  style?: { [propName: string]: any };
+  style: { [propName: string]: any };
   todo: TodoType;
   attributes?: any;
   listeners?: any;
@@ -19,23 +19,14 @@ export const Todo2 = forwardRef(({ ...props }: TodoProps, ref) => {
   function handleDeleteTodo() {
     props.deleteTodo(props.id);
   }
-  let newStyle: { [propName: string]: any } = {};
-
-  if (props.style) {
-    newStyle = props.style;
-  } else {
-    // newStyle.visibility = 'hidden';
-    newStyle.border = '2px solid blue';
-    newStyle.cursor = 'grabbing';
-  }
 
   return (
     <div
-      ref={ref as RefObject<HTMLDivElement>}
-      // {...props.attributes}
-      // {...props.listeners}
-      style={newStyle}
-      className="flex items-center border-b border-very-light-gray-blue bg-white px-3 dark:border-very-dark-gray-blue-2 dark:bg-very-dark-desaturated-blue"
+      ref={ref as RefObject<HTMLDivElement>} // SortableItem
+      style={props.style}
+      className={`flex items-center rounded-t-md border-b border-very-light-gray-blue bg-white px-3 dark:border-very-dark-gray-blue-2 dark:bg-very-dark-desaturated-blue ${
+        props.isDragging === undefined ? 'rounded-md' : ''
+      }`}
     >
       <button
         onClick={handleToggleCompleted}
@@ -47,11 +38,9 @@ export const Todo2 = forwardRef(({ ...props }: TodoProps, ref) => {
       >
         <CheckIcon />
       </button>
-
       <input
-        {...props.attributes}
-        {...props.listeners}
-        // ref={ref}
+        {...props.attributes} // SortableItem
+        {...props.listeners} // SortableItem
         type="text"
         style={{ cursor: 'grab' }}
         placeholder="Create new todo..."
@@ -59,6 +48,10 @@ export const Todo2 = forwardRef(({ ...props }: TodoProps, ref) => {
         disabled
         className={`w-full rounded-md bg-white p-3 dark:bg-very-dark-desaturated-blue dark:text-white ${
           props.todo.isCompleted ? 'line-through opacity-50' : ''
+        } ${
+          props.isDragging === undefined
+            ? 'disabled:cursor-gr cursor-grabbing'
+            : 'cursor-grab disabled:cursor-grab'
         }`}
       />
       <button className="shrink-0" onClick={handleDeleteTodo}>
