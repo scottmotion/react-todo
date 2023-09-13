@@ -26,7 +26,7 @@ export const Todo2 = forwardRef(({ ...props }: TodoProps, ref) => {
       style={props.style}
       className={`flex items-center rounded-t-md border-b border-very-light-gray-blue bg-white px-3 dark:border-very-dark-gray-blue-2 dark:bg-very-dark-desaturated-blue ${
         props.isOverlay ? 'cursor-grabbing' : ''
-      }`}
+      } `}
     >
       <button
         disabled={props.isOverlay}
@@ -35,7 +35,9 @@ export const Todo2 = forwardRef(({ ...props }: TodoProps, ref) => {
           props.todo.isCompleted
             ? 'bg-gradient-to-br from-check-bg-start to-check-bg-end stroke-white'
             : 'stroke-none'
-        } ${props.isOverlay ? 'cursor-grabbing' : ''}`}
+        } ${props.isOverlay ? 'cursor-grabbing' : ''} ${
+          props.isDragging ? 'invisible' : ''
+        }`}
       >
         <CheckIcon />
       </button>
@@ -49,10 +51,14 @@ export const Todo2 = forwardRef(({ ...props }: TodoProps, ref) => {
         className={`w-full rounded-md bg-white p-3 dark:bg-very-dark-desaturated-blue dark:text-white ${
           props.todo.isCompleted ? 'line-through opacity-50' : ''
         }
-        ${props.isOverlay ? 'cursor-grabbing' : 'cursor-grab'}`}
+        ${props.isOverlay ? 'cursor-grabbing' : 'cursor-grab'} ${
+          props.isDragging ? 'invisible' : ''
+        }`}
       />
       <button
-        className={`shrink-0  ${props.isOverlay ? 'cursor-grabbing' : ''}`}
+        className={`shrink-0  ${props.isOverlay ? 'cursor-grabbing' : ''} ${
+          props.isDragging ? 'invisible' : ''
+        }`}
         onClick={handleDeleteTodo}
         disabled={props.isOverlay}
       >

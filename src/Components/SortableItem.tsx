@@ -25,9 +25,9 @@ export function SortableItem(props: SortableItemProps) {
     transition,
   };
 
-  if (isDragging) {
-    style.visibility = 'hidden';
-  }
+  // if (isDragging) {
+  //   style.visibility = 'hidden';
+  // }
 
   return (
     <Todo2
