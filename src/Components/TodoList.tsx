@@ -107,10 +107,11 @@ export default function TodoList({
           {activeId ? (
             <Todo2
               id={activeId}
-              style={{ border: '2px solid blue' }}
+              // style={{ border: '2px solid blue' }}
               todo={todos[todos.findIndex(todo => todo.id === activeId)]}
               deleteTodo={deleteTodo}
               toggleIsCompleted={toggleIsCompleted}
+              isOverlay={true}
             />
           ) : null}
         </DragOverlay>
