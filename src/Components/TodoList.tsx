@@ -74,54 +74,58 @@ export default function TodoList({
   }
 
   return (
-    <div className="flex flex-col rounded-md bg-white dark:bg-very-dark-desaturated-blue dark:text-white">
-      <DndContext
-        sensors={sensors}
-        collisionDetection={closestCenter}
-        onDragStart={handleDragStart}
-        onDragEnd={handleDragEnd}
-        modifiers={[restrictToVerticalAxis]}
-      >
-        <SortableContext items={todos} strategy={verticalListSortingStrategy}>
-          {todos
-            .filter(
-              todo =>
-                activeFilter === 'Completed' // Completed
-                  ? todo.isCompleted
-                  : activeFilter === 'Active' // Active
-                  ? !todo.isCompleted
-                  : todo, // All
-            )
-            .map(todo => (
-              <SortableItem
-                key={todo.id}
-                activeId={activeId}
-                id={todo.id}
-                todo={todo}
+    <div>
+      <div className="flex flex-col rounded-t-md bg-white dark:bg-very-dark-desaturated-blue dark:text-white">
+        <DndContext
+          sensors={sensors}
+          collisionDetection={closestCenter}
+          onDragStart={handleDragStart}
+          onDragEnd={handleDragEnd}
+          modifiers={[restrictToVerticalAxis]}
+        >
+          <SortableContext items={todos} strategy={verticalListSortingStrategy}>
+            {todos
+              .filter(
+                todo =>
+                  activeFilter === 'Completed' // Completed
+                    ? todo.isCompleted
+                    : activeFilter === 'Active' // Active
+                    ? !todo.isCompleted
+                    : todo, // All
+              )
+              .map(todo => (
+                <SortableItem
+                  key={todo.id}
+                  activeId={activeId}
+                  id={todo.id}
+                  todo={todo}
+                  deleteTodo={deleteTodo}
+                  toggleIsCompleted={toggleIsCompleted}
+                />
+              ))}
+          </SortableContext>
+          <DragOverlay modifiers={[restrictToParentElement]}>
+            {activeId ? (
+              <Todo2
+                id={activeId}
+                // style={{ border: '2px solid blue' }}
+                todo={todos[todos.findIndex(todo => todo.id === activeId)]}
                 deleteTodo={deleteTodo}
                 toggleIsCompleted={toggleIsCompleted}
+                isOverlay={true}
               />
-            ))}
-        </SortableContext>
-        <DragOverlay modifiers={[restrictToParentElement]}>
-          {activeId ? (
-            <Todo2
-              id={activeId}
-              // style={{ border: '2px solid blue' }}
-              todo={todos[todos.findIndex(todo => todo.id === activeId)]}
-              deleteTodo={deleteTodo}
-              toggleIsCompleted={toggleIsCompleted}
-              isOverlay={true}
-            />
-          ) : null}
-        </DragOverlay>
-      </DndContext>
-      <div className="flex w-full items-center justify-between p-3 text-sm">
-        <p>
-          {todos.filter(todo => todo.isCompleted === false).length} items left
-        </p>
-        {children}
-        <button onClick={handleClearCompleted}>Clear Completed</button>
+            ) : null}
+          </DragOverlay>
+        </DndContext>
+      </div>
+      <div className="flex flex-col rounded-b-md bg-white dark:bg-very-dark-desaturated-blue dark:text-white">
+        <div className="flex w-full items-center justify-between p-3 text-sm">
+          <p>
+            {todos.filter(todo => todo.isCompleted === false).length} items left
+          </p>
+          {children}
+          <button onClick={handleClearCompleted}>Clear Completed</button>
+        </div>
       </div>
     </div>
   );
