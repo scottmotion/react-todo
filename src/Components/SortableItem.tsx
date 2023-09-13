@@ -4,8 +4,14 @@ import { CSS } from '@dnd-kit/utilities';
 import { Todo2 } from './Todo2';
 
 export function SortableItem(props) {
-  const { attributes, listeners, setNodeRef, transform, transition } =
-    useSortable({ id: props.id });
+  const {
+    attributes,
+    listeners,
+    setNodeRef,
+    transform,
+    transition,
+    isDragging,
+  } = useSortable({ id: props.id });
 
   let style = {
     transform: CSS.Transform.toString(transform),
@@ -13,11 +19,15 @@ export function SortableItem(props) {
     cursor: 'grab',
   };
 
-  if (props.id === props.activeId) {
-    // style.opacity = '.25';
+  // if (props.id === props.activeId) {
+  //   // style.opacity = '.25';
+  //   style.visibility = 'hidden';
+  // }
+
+  if (isDragging) {
+    // console.log('Dragging');
     style.visibility = 'hidden';
   }
-
   return (
     <Todo2
       id={props.id}
