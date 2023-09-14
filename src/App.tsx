@@ -4,8 +4,8 @@ import ThemeToggle from './Components/ThemeToggle';
 import NewTodoInput from './Components/NewTodoInput';
 import { TodoType } from './Types/TodoType';
 import TodoList from './Components/TodoList';
-import TodoFilters from './Components/TodoFilters';
 import TodoFiltersMobile from './Components/TodoFiltersMobile';
+import TodoFiltersDesktop from './Components/TodoFiltersDesktop';
 import { todoData } from './data';
 
 import './App.css';
@@ -88,13 +88,13 @@ function App() {
             toggleIsCompleted={toggleIsCompleted}
             clearCompleted={clearCompleted}
           >
-            <TodoFiltersMobile
+            <TodoFiltersDesktop
               filters={filters}
               activeFilter={activeFilter}
               setActiveFilter={setActiveFilter}
             />
           </TodoList>
-          <TodoFilters
+          <TodoFiltersMobile
             filters={filters}
             activeFilter={activeFilter}
             setActiveFilter={setActiveFilter}

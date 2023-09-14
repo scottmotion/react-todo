@@ -10,18 +10,18 @@ export default function TodoFiltersMobile({
   setActiveFilter,
 }: TodoFiltersProps) {
   return (
-    <div className="hidden w-auto items-center justify-center gap-6 rounded-md bg-white dark:bg-very-dark-desaturated-blue dark:text-white md:flex">
-      <>
-        {filters.map((filter, index) => (
-          <button
-            className={`${filter === activeFilter ? 'text-bright-blue' : ''} `}
-            key={index}
-            onClick={() => setActiveFilter(filter)}
-          >
-            {filter}
-          </button>
-        ))}
-      </>
+    <div className="flex w-full items-center justify-center gap-6 rounded-md bg-white p-3 dark:bg-very-dark-desaturated-blue dark:text-white md:hidden">
+      {filters.map((filter, index) => (
+        <button
+          className={`${
+            filter === activeFilter ? 'text-bright-blue opacity-100' : ''
+          } text-lg opacity-50 hover:opacity-100`}
+          key={index}
+          onClick={() => setActiveFilter(filter)}
+        >
+          {filter}
+        </button>
+      ))}
     </div>
   );
 }
