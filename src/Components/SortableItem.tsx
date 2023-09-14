@@ -20,7 +20,7 @@ export function SortableItem(props: SortableItemProps) {
     isDragging,
   } = useSortable({ id: props.id });
 
-  let style: { [propName: string]: any } = {
+  let style: React.CSSProperties = {
     transform: CSS.Transform.toString(transform),
     transition,
   };

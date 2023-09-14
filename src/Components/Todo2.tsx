@@ -2,12 +2,14 @@ import { RefObject, forwardRef } from 'react';
 import { ReactComponent as CheckIcon } from '/src/assets/icon-check.svg';
 import { ReactComponent as CrossIcon } from '/src/assets/icon-cross.svg';
 import { TodoType } from '../Types/TodoType';
+import { DraggableAttributes } from '@dnd-kit/core';
+import { SyntheticListenerMap } from '@dnd-kit/core/dist/hooks/utilities';
 type TodoProps = {
   id: string;
-  style?: { [propName: string]: any };
+  style?: React.CSSProperties;
   todo: TodoType;
-  attributes?: any;
-  listeners?: any;
+  attributes?: DraggableAttributes;
+  listeners?: SyntheticListenerMap | undefined;
   deleteTodo: (arg0: string) => void;
   toggleIsCompleted: (arg0: string) => void;
   isDragging?: boolean;

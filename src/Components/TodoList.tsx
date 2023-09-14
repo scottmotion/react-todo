@@ -12,6 +12,8 @@ import {
   PointerSensor,
   useSensor,
   useSensors,
+  DragStartEvent,
+  DragEndEvent,
 } from '@dnd-kit/core';
 
 import {
@@ -29,7 +31,7 @@ import {
 type TodoListType = {
   children: ReactNode;
   todos: TodoType[];
-  setTodos: any;
+  setTodos: React.Dispatch<React.SetStateAction<TodoType[]>>;
   activeFilter: string;
   deleteTodo: (arg0: string) => void;
   toggleIsCompleted: (arg0: string) => void;
@@ -45,7 +47,7 @@ export default function TodoList({
   toggleIsCompleted,
   clearCompleted,
 }: TodoListType) {
-  const [activeId, setActiveId] = useState(null);
+  const [activeId, setActiveId] = useState<string | null>(null);
   const sensors = useSensors(
     useSensor(PointerSensor),
     useSensor(KeyboardSensor, {
@@ -56,14 +58,14 @@ export default function TodoList({
   function handleClearCompleted() {
     clearCompleted();
   }
-  function handleDragStart(event: any) {
+  function handleDragStart(event: DragStartEvent): void {
     const { active } = event;
-    setActiveId(active.id);
+    setActiveId(active.id.toString());
   }
 
-  function handleDragEnd(event: any) {
+  function handleDragEnd(event: DragEndEvent): void {
     const { active, over } = event;
-    if (active.id !== over.id) {
+    if (over !== null && active.id !== over.id) {
       setTodos((todos: TodoType[]) => {
         const oldIndex = todos.findIndex(todo => todo.id === active.id);
         const newIndex = todos.findIndex(todo => todo.id === over.id);
