@@ -14,6 +14,7 @@ import {
   useSensors,
   DragStartEvent,
   DragEndEvent,
+  UniqueIdentifier,
 } from '@dnd-kit/core';
 
 import {
@@ -33,8 +34,8 @@ type TodoListType = {
   todos: TodoType[];
   setTodos: React.Dispatch<React.SetStateAction<TodoType[]>>;
   activeFilter: string;
-  deleteTodo: (arg0: string) => void;
-  toggleIsCompleted: (arg0: string) => void;
+  deleteTodo: (arg0: UniqueIdentifier) => void;
+  toggleIsCompleted: (arg0: UniqueIdentifier) => void;
   clearCompleted: () => void;
 };
 

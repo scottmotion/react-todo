@@ -1,5 +1,7 @@
+import { UniqueIdentifier } from '@dnd-kit/core';
+
 export type TodoType = {
-  id: string;
+  id: UniqueIdentifier;
   title: string;
   isCompleted: boolean;
 };

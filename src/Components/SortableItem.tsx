@@ -3,12 +3,13 @@ import { CSS } from '@dnd-kit/utilities';
 import { TodoType } from '../Types/TodoType';
 
 import { Todo2 } from './Todo2';
+import { UniqueIdentifier } from '@dnd-kit/core';
 type SortableItemProps = {
   activeId: string | null;
-  id: string;
+  id: UniqueIdentifier;
   todo: TodoType;
-  deleteTodo: (arg0: string) => void;
-  toggleIsCompleted: (arg0: string) => void;
+  deleteTodo: (arg0: UniqueIdentifier) => void;
+  toggleIsCompleted: (arg0: UniqueIdentifier) => void;
 };
 export function SortableItem(props: SortableItemProps) {
   const {

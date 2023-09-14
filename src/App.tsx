@@ -9,6 +9,7 @@ import TodoFiltersDesktop from './Components/TodoFiltersDesktop';
 import { todoData } from './data';
 
 import './App.css';
+import { UniqueIdentifier } from '@dnd-kit/core';
 
 export const ThemeContext = createContext('light');
 
@@ -49,7 +50,7 @@ function App() {
     setTodos(prevTodos => [...prevTodos, newTodo]);
   }
 
-  function toggleIsCompleted(id: string) {
+  function toggleIsCompleted(id: UniqueIdentifier) {
     const nextTodos = todos.map(t => {
       if (t.id === id) {
         return { ...t, isCompleted: !t.isCompleted };
@@ -61,7 +62,7 @@ function App() {
     setTodos(nextTodos);
   }
 
-  function deleteTodo(id: string): void {
+  function deleteTodo(id: UniqueIdentifier): void {
     setTodos(todos.filter(t => t.id !== id));
   }
 
