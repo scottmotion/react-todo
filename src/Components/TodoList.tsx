@@ -120,11 +120,16 @@ export default function TodoList({
       </div>
       <div className="flex flex-col rounded-b-md bg-white dark:bg-very-dark-desaturated-blue dark:text-white">
         <div className="flex w-full items-center justify-between p-3 text-sm">
-          <p>
+          <p className="opacity-50">
             {todos.filter(todo => todo.isCompleted === false).length} items left
           </p>
           {children}
-          <button onClick={handleClearCompleted}>Clear Completed</button>
+          <button
+            onClick={handleClearCompleted}
+            className="opacity-50 hover:opacity-100"
+          >
+            Clear Completed
+          </button>
         </div>
       </div>
     </div>

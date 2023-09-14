@@ -14,8 +14,8 @@ export default function TodoFilters({
       {filters.map((filter, index) => (
         <button
           className={`${
-            filter === activeFilter ? 'text-bright-blue' : ''
-          } text-lg`}
+            filter === activeFilter ? 'text-bright-blue opacity-100' : ''
+          } text-lg opacity-50 hover:opacity-100`}
           key={index}
           onClick={() => setActiveFilter(filter)}
         >

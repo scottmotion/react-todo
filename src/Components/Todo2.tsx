@@ -24,7 +24,7 @@ export const Todo2 = forwardRef(({ ...props }: TodoProps, ref) => {
     <div
       ref={ref as RefObject<HTMLDivElement>} // SortableItem
       style={props.style}
-      className={`flex items-center rounded-t-md border-b border-very-light-gray-blue bg-white px-3 dark:border-very-dark-gray-blue-2 dark:bg-very-dark-desaturated-blue ${
+      className={`group flex items-center rounded-t-md border-b border-very-light-gray-blue bg-white px-3 dark:border-very-dark-gray-blue-2 dark:bg-very-dark-desaturated-blue ${
         props.isOverlay ? 'cursor-grabbing' : ''
       } `}
     >
@@ -56,9 +56,9 @@ export const Todo2 = forwardRef(({ ...props }: TodoProps, ref) => {
         }`}
       />
       <button
-        className={`shrink-0  ${props.isOverlay ? 'cursor-grabbing' : ''} ${
-          props.isDragging ? 'invisible' : ''
-        }`}
+        className={`invisible shrink-0 group-hover:visible ${
+          props.isOverlay ? 'cursor-grabbing' : ''
+        } ${props.isDragging ? 'invisible' : ''}`}
         onClick={handleDeleteTodo}
         disabled={props.isOverlay}
       >
