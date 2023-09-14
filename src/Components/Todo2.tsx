@@ -28,9 +28,6 @@ export const Todo2 = forwardRef(({ ...props }: TodoProps, ref) => {
         props.isOverlay ? 'cursor-grabbing' : ''
       } `}
     >
-      {/* <span className="relative inline-block before:absolute before:-inset-1 before:block before:-skew-y-3 before:bg-pink-500"> */}
-      {/* <span className="relative text-white">annoyed</span> */}
-      {/* </span> */}
       <button
         disabled={props.isOverlay}
         onClick={handleToggleCompleted}
@@ -70,7 +67,3 @@ export const Todo2 = forwardRef(({ ...props }: TodoProps, ref) => {
     </div>
   );
 });
-
-// [background:linear-gradient(#ccc_0_0)_padding-box,linear-gradient(to_right,#9c20aa,#fb3570)_border-box]
-
-//     [border-image:linear-gradient(to_right,#787878,rgba(0,0,0,0))_1_0%]
