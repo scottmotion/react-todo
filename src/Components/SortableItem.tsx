@@ -2,7 +2,7 @@ import { useSortable } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
 import { TodoType } from '../Types/TodoType';
 
-import { Todo2 } from './Todo2';
+import { Todo } from './Todo';
 import { UniqueIdentifier } from '@dnd-kit/core';
 type SortableItemProps = {
   activeId: string | null;
@@ -27,7 +27,7 @@ export function SortableItem(props: SortableItemProps) {
   };
 
   return (
-    <Todo2
+    <Todo
       id={props.id}
       ref={setNodeRef}
       style={style}
@@ -37,6 +37,6 @@ export function SortableItem(props: SortableItemProps) {
       attributes={attributes}
       listeners={listeners}
       isDragging={isDragging}
-    ></Todo2>
+    ></Todo>
   );
 }

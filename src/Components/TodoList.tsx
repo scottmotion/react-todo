@@ -2,7 +2,7 @@ import { TodoType } from '../Types/TodoType';
 import { ReactNode, useState } from 'react';
 
 import { SortableItem } from './SortableItem';
-import { Todo2 } from './Todo2';
+import { Todo } from './Todo';
 
 import {
   DndContext,
@@ -109,7 +109,7 @@ export default function TodoList({
           </SortableContext>
           <DragOverlay modifiers={[restrictToParentElement]}>
             {activeId ? (
-              <Todo2
+              <Todo
                 id={activeId}
                 // style={{ border: '2px solid blue' }}
                 todo={todos[todos.findIndex(todo => todo.id === activeId)]}

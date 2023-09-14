@@ -15,7 +15,7 @@ type TodoProps = {
   isDragging?: boolean;
   isOverlay?: boolean;
 };
-export const Todo2 = forwardRef(({ ...props }: TodoProps, ref) => {
+export const Todo = forwardRef(({ ...props }: TodoProps, ref) => {
   function handleToggleCompleted() {
     props.toggleIsCompleted(props.id);
   }
