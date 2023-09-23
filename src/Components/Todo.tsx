@@ -27,7 +27,7 @@ export const Todo = forwardRef(({ ...props }: TodoProps, ref) => {
       ref={ref as RefObject<HTMLDivElement>} // SortableItem
       style={props.style}
       className={`group flex items-center rounded-t-md border-b border-very-light-gray-blue bg-white p-5 dark:border-very-dark-gray-blue-2 dark:bg-very-dark-desaturated-blue ${
-        props.isOverlay ? 'cursor-grabbing' : ''
+        props.isOverlay ? 'cursor-grabbing border-t' : ''
       } `}
     >
       <button
