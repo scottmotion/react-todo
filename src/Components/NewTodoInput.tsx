@@ -39,7 +39,7 @@ export default function NewTodoInput({ addTodo }: NewTodoProps) {
       <input
         type="text"
         placeholder="Create new todo..."
-        className="w-full rounded-md bg-white p-3 focus:outline-none dark:bg-very-dark-desaturated-blue dark:text-white"
+        className="w-full rounded-md bg-white p-5 focus:outline-none dark:bg-very-dark-desaturated-blue dark:text-white"
         onChange={e => handleChange(e)}
         onKeyDown={e => handleKeyDown(e)}
         value={newTodo.title}

@@ -26,7 +26,7 @@ export const Todo = forwardRef(({ ...props }: TodoProps, ref) => {
     <div
       ref={ref as RefObject<HTMLDivElement>} // SortableItem
       style={props.style}
-      className={`group flex items-center rounded-t-md border-b border-very-light-gray-blue bg-white px-3 dark:border-very-dark-gray-blue-2 dark:bg-very-dark-desaturated-blue ${
+      className={`group flex items-center rounded-t-md border-b border-very-light-gray-blue bg-white p-5 dark:border-very-dark-gray-blue-2 dark:bg-very-dark-desaturated-blue ${
         props.isOverlay ? 'cursor-grabbing' : ''
       } `}
     >
@@ -50,7 +50,7 @@ export const Todo = forwardRef(({ ...props }: TodoProps, ref) => {
         placeholder="Create new todo..."
         value={props.todo.title}
         disabled
-        className={`w-full rounded-md bg-white p-3 dark:bg-very-dark-desaturated-blue dark:text-white ${
+        className={`w-full rounded-md bg-white px-5 dark:bg-very-dark-desaturated-blue dark:text-white ${
           props.todo.isCompleted ? 'line-through opacity-50' : ''
         }
         ${props.isOverlay ? 'cursor-grabbing' : 'cursor-grab'} ${
@@ -58,7 +58,7 @@ export const Todo = forwardRef(({ ...props }: TodoProps, ref) => {
         }`}
       />
       <button
-        className={`invisible shrink-0 group-hover:visible ${
+        className={`invisible shrink-0 opacity-50 hover:opacity-100 group-hover:visible ${
           props.isOverlay ? 'cursor-grabbing' : ''
         } ${props.isDragging ? 'invisible' : ''}`}
         onClick={handleDeleteTodo}

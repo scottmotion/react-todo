@@ -122,7 +122,7 @@ export default function TodoList({
         </DndContext>
       </div>
       <div className="flex flex-col rounded-b-md bg-white dark:bg-very-dark-desaturated-blue dark:text-white">
-        <div className="flex w-full items-center justify-between p-3 text-sm">
+        <div className="flex w-full items-center justify-between p-4 text-sm">
           <p className="opacity-50">
             {todos.filter(todo => todo.isCompleted === false).length} items left
           </p>
