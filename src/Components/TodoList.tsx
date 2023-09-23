@@ -111,7 +111,6 @@ export default function TodoList({
             {activeId ? (
               <Todo
                 id={activeId}
-                // style={{ border: '2px solid blue' }}
                 todo={todos[todos.findIndex(todo => todo.id === activeId)]}
                 deleteTodo={deleteTodo}
                 toggleIsCompleted={toggleIsCompleted}
