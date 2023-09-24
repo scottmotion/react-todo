@@ -18,7 +18,7 @@ export default function TodoFiltersDesktop({
               filter === activeFilter
                 ? 'text-bright-blue opacity-100'
                 : 'opacity-50 hover:opacity-100'
-            } `}
+            } text-base `}
             key={index}
             onClick={() => setActiveFilter(filter)}
           >

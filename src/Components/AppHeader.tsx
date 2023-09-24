@@ -4,7 +4,7 @@ type AppHeaderProps = {
 
 export default function AppHeader({ children }: AppHeaderProps) {
   return (
-    <div className="mb-3 flex w-full justify-between leading-none">
+    <div className="mb-4 flex w-full justify-between leading-none md:mb-3">
       <h1 className="text-2xl font-bold tracking-[0.5em] text-white md:text-4xl">
         TODO
       </h1>

@@ -26,14 +26,14 @@ export const Todo = forwardRef(({ ...props }: TodoProps, ref) => {
     <div
       ref={ref as RefObject<HTMLDivElement>} // SortableItem
       style={props.style}
-      className={`group flex items-center rounded-t-md border-b border-very-light-gray-blue bg-white p-5 dark:border-very-dark-gray-blue-2 dark:bg-very-dark-desaturated-blue ${
+      className={`group flex items-center rounded-t-md border-b border-very-light-gray-blue bg-white p-4 dark:border-very-dark-gray-blue-2 dark:bg-very-dark-desaturated-blue md:p-5 ${
         props.isOverlay ? 'cursor-grabbing border-t' : ''
       } `}
     >
       <button
         disabled={props.isOverlay}
         onClick={handleToggleCompleted}
-        className={`aspect-square shrink-0 rounded-full border border-very-light-gray-blue p-1.5 dark:border-very-dark-gray-blue-2 ${
+        className={`aspect-square shrink-0 rounded-full border border-very-light-gray-blue p-1 dark:border-very-dark-gray-blue-2 md:p-1.5 ${
           props.todo.isCompleted
             ? 'bg-gradient-to-br from-check-bg-start to-check-bg-end stroke-white'
             : 'relative inline-block from-check-bg-start to-check-bg-end stroke-none before:absolute before:-inset-0 before:m-0.5 before:block before:rounded-full before:bg-white hover:bg-gradient-to-br dark:before:bg-very-dark-desaturated-blue'
@@ -50,7 +50,7 @@ export const Todo = forwardRef(({ ...props }: TodoProps, ref) => {
         placeholder="Create new todo..."
         value={props.todo.title}
         disabled
-        className={`w-full rounded-md bg-white px-5 dark:bg-very-dark-desaturated-blue dark:text-white ${
+        className={`w-full rounded-md bg-white px-5 text-xs dark:bg-very-dark-desaturated-blue dark:text-white md:text-lg ${
           props.todo.isCompleted ? 'line-through opacity-50' : ''
         }
         ${props.isOverlay ? 'cursor-grabbing' : 'cursor-grab'} ${
