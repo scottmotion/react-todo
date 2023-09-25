@@ -51,7 +51,9 @@ export const Todo = forwardRef(({ ...props }: TodoProps, ref) => {
         value={props.todo.title}
         disabled
         className={`w-full rounded-md bg-white px-5 text-xs dark:bg-very-dark-desaturated-blue dark:text-white md:text-lg ${
-          props.todo.isCompleted ? 'line-through opacity-50' : ''
+          props.todo.isCompleted
+            ? 'text-light-gray-blue line-through'
+            : 'text-very-dark-gray-blue'
         }
         ${props.isOverlay ? 'cursor-grabbing' : 'cursor-grab'} ${
           props.isDragging ? 'invisible' : ''

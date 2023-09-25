@@ -10,14 +10,12 @@ export default function TodoFiltersMobile({
   setActiveFilter,
 }: TodoFiltersProps) {
   return (
-    <div className="shadow-3xl-light dark:shadow-3xl-dark flex w-full items-center justify-center gap-6 rounded-md bg-white p-4 text-base dark:bg-very-dark-desaturated-blue dark:text-white md:hidden">
+    <div className="shadow-3xl-light dark:shadow-3xl-dark flex w-full items-center justify-center gap-6 rounded-md bg-white p-4 text-dark-gray-blue dark:bg-very-dark-desaturated-blue dark:text-white md:hidden">
       {filters.map((filter, index) => (
         <button
           className={`${
-            filter === activeFilter
-              ? 'text-bright-blue opacity-100'
-              : 'opacity-50'
-          } text-sm hover:opacity-100`}
+            filter === activeFilter ? 'text-bright-blue' : ''
+          } text-sm hover:text-very-dark-gray-blue`}
           key={index}
           onClick={() => setActiveFilter(filter)}
         >

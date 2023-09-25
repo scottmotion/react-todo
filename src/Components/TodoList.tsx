@@ -120,15 +120,15 @@ export default function TodoList({
           </DragOverlay>
         </DndContext>
       </div>
-      <div className="flex flex-col rounded-b-md bg-white dark:bg-very-dark-desaturated-blue dark:text-white">
+      <div className="flex flex-col rounded-b-md bg-white text-dark-gray-blue dark:bg-very-dark-desaturated-blue dark:text-white">
         <div className="flex w-full items-center justify-between p-4 px-5 text-xs md:text-sm">
-          <p className="opacity-50">
+          <p>
             {todos.filter(todo => todo.isCompleted === false).length} items left
           </p>
           {children}
           <button
             onClick={handleClearCompleted}
-            className="opacity-50 hover:opacity-100"
+            className="hover:text-very-dark-gray-blue"
           >
             Clear Completed
           </button>

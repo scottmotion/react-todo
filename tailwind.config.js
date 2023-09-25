@@ -23,15 +23,15 @@ export default {
         'very-light-gray-blue': 'hsl(236, 33%, 92%)', // light mode borders
         'light-gray-blue': 'hsl(233, 11%, 84%)', // completed todo text
         'dark-gray-blue': 'hsl(236, 9%, 61%)', // inactive grey text, input placeholder
-        'very-dark-gray-blue': 'hsl(235, 19%, 35%)', // todo text
+        'very-dark-gray-blue': 'hsl(235, 19%, 35%)', // todo text, filter hover
 
         // dark mode
         'very-dark-blue': 'hsl(235, 21%, 11%)', // body bg
         'very-dark-desaturated-blue': 'hsl(235, 24%, 19%)', //todo list bg
-        'light-gray-blue': 'hsl(234, 39%, 85%)', // todo text
+        'light-gray-blue-2': 'hsl(234, 39%, 85%)', // todo text
         'light-gray-blue-hover': 'hsl(236, 33%, 92%)', // hover filter text
-        'dark-gray-blue': 'hsl(234, 11%, 52%)',
-        'very-dark-gray-blue': 'hsl(233, 14%, 35%)', // completed todo text
+        'dark-gray-blue-2': 'hsl(234, 11%, 52%)',
+        'very-dark-gray-blue-1': 'hsl(233, 14%, 35%)', // completed todo text
         'very-dark-gray-blue-2': 'hsl(237, 14%, 26%)', // dark mode borders
       },
       boxShadow: {

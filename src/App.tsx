@@ -100,8 +100,8 @@ function App() {
             activeFilter={activeFilter}
             setActiveFilter={setActiveFilter}
           />
-          <p className="mt-6 text-center text-sm opacity-50 dark:text-white">
-            Drag and drop to reorder list.
+          <p className="mt-6 text-center text-sm text-dark-gray-blue opacity-50 dark:text-white">
+            Drag and drop to reorder list
           </p>
         </section>
       </main>
