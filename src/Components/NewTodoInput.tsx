@@ -35,7 +35,7 @@ export default function NewTodoInput({ addTodo }: NewTodoProps) {
   }
 
   return (
-    <div>
+    <div className="shadow-3xl-light dark:shadow-3xl-dark">
       <input
         type="text"
         placeholder="Create new todo..."

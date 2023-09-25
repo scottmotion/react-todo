@@ -34,6 +34,10 @@ export default {
         'very-dark-gray-blue': 'hsl(233, 14%, 35%)', // completed todo text
         'very-dark-gray-blue-2': 'hsl(237, 14%, 26%)', // dark mode borders
       },
+      boxShadow: {
+        '3xl-light': '0 35px 50px -15px rgba(194, 195, 214, 0.50)',
+        '3xl-dark': '0 35px 50px -15px rgba(0, 0, 0, 0.50)',
+      },
     },
   },
   plugins: [],

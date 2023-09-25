@@ -77,7 +77,7 @@ export default function TodoList({
   }
 
   return (
-    <div>
+    <div className="shadow-3xl-light dark:shadow-3xl-dark">
       <div className="flex flex-col rounded-t-md bg-white dark:bg-very-dark-desaturated-blue dark:text-white">
         <DndContext
           sensors={sensors}
