@@ -11,7 +11,7 @@ import {
   KeyboardSensor,
   PointerSensor,
   MouseSensor,
-  TouchSensor,
+  // TouchSensor,
   useSensor,
   useSensors,
   DragStartEvent,
@@ -57,17 +57,17 @@ export default function TodoList({
     }),
     useSensor(PointerSensor, {
       activationConstraint: {
-        delay: 0,
+        delay: 250,
         tolerance: 5,
       },
     }),
     useSensor(MouseSensor),
-    useSensor(TouchSensor, {
-      activationConstraint: {
-        delay: 750,
-        tolerance: 5,
-      },
-    }),
+    // useSensor(TouchSensor, {
+    //   activationConstraint: {
+    //     delay: 750,
+    //     tolerance: 5,
+    //   },
+    // }),
   );
 
   function handleClearCompleted() {
