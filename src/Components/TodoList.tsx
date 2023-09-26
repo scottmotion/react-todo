@@ -9,7 +9,7 @@ import {
   DragOverlay,
   closestCenter,
   KeyboardSensor,
-  // PointerSensor,
+  PointerSensor,
   MouseSensor,
   TouchSensor,
   useSensor,
@@ -55,12 +55,12 @@ export default function TodoList({
     useSensor(KeyboardSensor, {
       coordinateGetter: sortableKeyboardCoordinates,
     }),
-    // useSensor(PointerSensor, {
-    //   activationConstraint: {
-    //     delay: 750,
-    //     tolerance: 5,
-    //   },
-    // }),
+    useSensor(PointerSensor, {
+      activationConstraint: {
+        delay: 750,
+        tolerance: 5,
+      },
+    }),
     useSensor(MouseSensor),
     useSensor(TouchSensor, {
       activationConstraint: {
