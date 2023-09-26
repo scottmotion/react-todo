@@ -43,7 +43,21 @@ export const Todo = forwardRef(({ ...props }: TodoProps, ref) => {
       >
         <CheckIcon />
       </button>
-      <input
+      <p
+        {...props.attributes} // SortableItem
+        {...props.listeners} // SortableItems
+        className={`w-full touch-none rounded-md bg-white px-5 text-xs dark:bg-very-dark-desaturated-blue md:text-lg md:leading-6 ${
+          props.todo.isCompleted
+            ? 'text-light-gray-blue line-through dark:text-very-dark-gray-blue-1'
+            : 'text-very-dark-gray-blue dark:text-light-gray-blue-2'
+        }
+        ${props.isOverlay ? 'cursor-grabbing' : 'cursor-grab'} ${
+          props.isDragging ? 'invisible' : ''
+        }`}
+      >
+        {props.todo.title}
+      </p>
+      {/* <input
         {...props.attributes} // SortableItem
         {...props.listeners} // SortableItems
         type="text"
@@ -58,7 +72,7 @@ export const Todo = forwardRef(({ ...props }: TodoProps, ref) => {
         ${props.isOverlay ? 'cursor-grabbing' : 'cursor-grab'} ${
           props.isDragging ? 'invisible' : ''
         }`}
-      />
+      /> */}
       <button
         className={`shrink-0 text-lg text-dark-gray-blue hover:text-very-dark-gray-blue group-hover:visible dark:text-dark-gray-blue-2 hover:dark:text-light-gray-blue-hover md:invisible md:text-[27px] ${
           props.isOverlay ? 'cursor-grabbing' : ''
