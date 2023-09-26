@@ -10,8 +10,6 @@ import {
   closestCenter,
   KeyboardSensor,
   PointerSensor,
-  MouseSensor,
-  // TouchSensor,
   useSensor,
   useSensors,
   DragStartEvent,
@@ -52,22 +50,10 @@ export default function TodoList({
 }: TodoListType) {
   const [activeId, setActiveId] = useState<string | null>(null);
   const sensors = useSensors(
+    useSensor(PointerSensor),
     useSensor(KeyboardSensor, {
       coordinateGetter: sortableKeyboardCoordinates,
     }),
-    useSensor(PointerSensor, {
-      activationConstraint: {
-        delay: 250,
-        tolerance: 5,
-      },
-    }),
-    useSensor(MouseSensor),
-    // useSensor(TouchSensor, {
-    //   activationConstraint: {
-    //     delay: 750,
-    //     tolerance: 5,
-    //   },
-    // }),
   );
 
   function handleClearCompleted() {
