@@ -10,6 +10,7 @@ import {
   closestCenter,
   KeyboardSensor,
   PointerSensor,
+  TouchSensor,
   useSensor,
   useSensors,
   DragStartEvent,
@@ -53,6 +54,12 @@ export default function TodoList({
     useSensor(PointerSensor),
     useSensor(KeyboardSensor, {
       coordinateGetter: sortableKeyboardCoordinates,
+    }),
+    useSensor(TouchSensor, {
+      activationConstraint: {
+        delay: 250,
+        tolerance: 5,
+      },
     }),
   );
 
@@ -120,7 +127,7 @@ export default function TodoList({
           </DragOverlay>
         </DndContext>
       </div>
-      <div className="dark:text-dark-gray-blue-2 flex flex-col rounded-b-md bg-white text-dark-gray-blue dark:bg-very-dark-desaturated-blue">
+      <div className="flex flex-col rounded-b-md bg-white text-dark-gray-blue dark:bg-very-dark-desaturated-blue dark:text-dark-gray-blue-2">
         <div className="flex w-full items-center justify-between p-4 px-5 text-xs md:text-sm">
           <p>
             {todos.filter(todo => todo.isCompleted === false).length} items left
