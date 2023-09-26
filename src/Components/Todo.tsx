@@ -52,15 +52,15 @@ export const Todo = forwardRef(({ ...props }: TodoProps, ref) => {
         disabled
         className={`w-full rounded-md bg-white px-5 text-xs dark:bg-very-dark-desaturated-blue md:text-lg ${
           props.todo.isCompleted
-            ? 'dark:text-very-dark-gray-blue-1 text-light-gray-blue line-through'
-            : 'dark:text-light-gray-blue-2 text-very-dark-gray-blue'
+            ? 'text-light-gray-blue line-through dark:text-very-dark-gray-blue-1'
+            : 'text-very-dark-gray-blue dark:text-light-gray-blue-2'
         }
         ${props.isOverlay ? 'cursor-grabbing' : 'cursor-grab'} ${
           props.isDragging ? 'invisible' : ''
         }`}
       />
       <button
-        className={`invisible shrink-0 opacity-50 hover:opacity-100 group-hover:visible ${
+        className={`shrink-0 text-lg opacity-50 hover:opacity-100 group-hover:visible md:visible md:text-[27px] ${
           props.isOverlay ? 'cursor-grabbing' : ''
         } ${props.isDragging ? 'invisible' : ''}`}
         onClick={handleDeleteTodo}
