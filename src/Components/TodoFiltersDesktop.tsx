@@ -10,7 +10,7 @@ export default function TodoFiltersDesktop({
   setActiveFilter,
 }: TodoFiltersProps) {
   return (
-    <div className="hidden w-auto items-center justify-center gap-6 rounded-md bg-white text-dark-gray-blue dark:bg-very-dark-desaturated-blue dark:text-white md:flex">
+    <div className="hidden w-auto items-center justify-center gap-6 rounded-md bg-white font-bold text-dark-gray-blue dark:bg-very-dark-desaturated-blue dark:text-white md:flex">
       <>
         {filters.map((filter, index) => (
           <button

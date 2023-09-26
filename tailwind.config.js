@@ -30,7 +30,7 @@ export default {
         'very-dark-desaturated-blue': 'hsl(235, 24%, 19%)', //todo list bg
         'light-gray-blue-2': 'hsl(234, 39%, 85%)', // todo text
         'light-gray-blue-hover': 'hsl(236, 33%, 92%)', // hover filter text
-        'dark-gray-blue-2': 'hsl(234, 11%, 52%)',
+        'dark-gray-blue-2': 'hsl(234, 11%, 52%)', // ???inactive grey text, input placeholder???
         'very-dark-gray-blue-1': 'hsl(233, 14%, 35%)', // completed todo text
         'very-dark-gray-blue-2': 'hsl(237, 14%, 26%)', // dark mode borders
       },

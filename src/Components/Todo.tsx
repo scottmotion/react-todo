@@ -50,10 +50,10 @@ export const Todo = forwardRef(({ ...props }: TodoProps, ref) => {
         placeholder="Create new todo..."
         value={props.todo.title}
         disabled
-        className={`w-full rounded-md bg-white px-5 text-xs dark:bg-very-dark-desaturated-blue dark:text-white md:text-lg ${
+        className={`w-full rounded-md bg-white px-5 text-xs dark:bg-very-dark-desaturated-blue md:text-lg ${
           props.todo.isCompleted
-            ? 'text-light-gray-blue line-through'
-            : 'text-very-dark-gray-blue'
+            ? 'dark:text-very-dark-gray-blue-1 text-light-gray-blue line-through'
+            : 'dark:text-light-gray-blue-2 text-very-dark-gray-blue'
         }
         ${props.isOverlay ? 'cursor-grabbing' : 'cursor-grab'} ${
           props.isDragging ? 'invisible' : ''
