@@ -57,7 +57,7 @@ export default function TodoList({
     }),
     useSensor(TouchSensor, {
       activationConstraint: {
-        delay: 250,
+        delay: 1000,
         tolerance: 5,
       },
     }),
