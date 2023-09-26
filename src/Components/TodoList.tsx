@@ -60,12 +60,12 @@ export default function TodoList({
     useSensor(KeyboardSensor, {
       coordinateGetter: sortableKeyboardCoordinates,
     }),
-    useSensor(TouchSensor, {
-      activationConstraint: {
-        delay: 1000,
-        tolerance: 5,
-      },
-    }),
+    // useSensor(TouchSensor, {
+    //   activationConstraint: {
+    //     delay: 1000,
+    //     tolerance: 5,
+    //   },
+    // }),
   );
 
   function handleClearCompleted() {
