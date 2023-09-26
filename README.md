@@ -37,8 +37,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Frontend Mentor](https://www.frontendmentor.io/solutions/draganddrop-todo-app-react-ts-tailwind-dndkit-nmP2BluJGk)
+- Live Site URL: [GitHub Pages](https://scottmotion.github.io/react-todo/)
 
 ## My process
 
