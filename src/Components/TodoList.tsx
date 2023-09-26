@@ -10,7 +10,6 @@ import {
   closestCenter,
   KeyboardSensor,
   PointerSensor,
-  TouchSensor,
   useSensor,
   useSensors,
   DragStartEvent,
@@ -60,12 +59,6 @@ export default function TodoList({
     useSensor(KeyboardSensor, {
       coordinateGetter: sortableKeyboardCoordinates,
     }),
-    // useSensor(TouchSensor, {
-    //   activationConstraint: {
-    //     delay: 1000,
-    //     tolerance: 5,
-    //   },
-    // }),
   );
 
   function handleClearCompleted() {
