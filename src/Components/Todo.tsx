@@ -45,7 +45,7 @@ export const Todo = forwardRef(({ ...props }: TodoProps, ref) => {
       </button>
       <input
         {...props.attributes} // SortableItem
-        {...props.listeners} // SortableItem
+        {...props.listeners} // SortableItems
         type="text"
         placeholder="Create new todo..."
         value={props.todo.title}
