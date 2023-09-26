@@ -52,7 +52,7 @@ export default function TodoList({
   const sensors = useSensors(
     useSensor(PointerSensor, {
       activationConstraint: {
-        delay: 1000,
+        delay: 750,
         tolerance: 5,
       },
     }),
