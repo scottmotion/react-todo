@@ -23,8 +23,8 @@ function App() {
 
   // Check if client prefers dark mode
   useEffect(() => {
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      setTheme('dark');
+    if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+      setTheme('light');
     }
   }, []);
 
