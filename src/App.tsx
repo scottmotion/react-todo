@@ -72,7 +72,7 @@ function App() {
 
   return (
     <ThemeContext.Provider value={theme}>
-      <main className="flex flex-col items-center">
+      <main className="flex select-none flex-col items-center">
         <section className="relative flex w-full select-none">
           <img className="w-full content-header-mobile-light dark:content-header-mobile-dark md:content-header-desktop-light md:dark:content-header-desktop-dark"></img>
         </section>
