@@ -60,7 +60,7 @@ export const Todo = forwardRef(({ ...props }: TodoProps, ref) => {
         }`}
       />
       <button
-        className={`shrink-0 text-lg text-dark-gray-blue hover:text-very-dark-gray-blue group-hover:visible dark:text-dark-gray-blue-2 hover:dark:text-light-gray-blue-hover md:visible md:text-[27px] ${
+        className={`shrink-0 text-lg text-dark-gray-blue hover:text-very-dark-gray-blue group-hover:visible dark:text-dark-gray-blue-2 hover:dark:text-light-gray-blue-hover md:invisible md:text-[27px] ${
           props.isOverlay ? 'cursor-grabbing' : ''
         } ${props.isDragging ? 'invisible' : ''}`}
         onClick={handleDeleteTodo}
