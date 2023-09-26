@@ -16,7 +16,7 @@ export const ThemeContext = createContext('light');
 const myTodos: TodoType[] = todoData;
 
 function App() {
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState('dark');
   const [todos, setTodos] = useState(myTodos);
   const filters: string[] = ['All', 'Active', 'Completed'];
   const [activeFilter, setActiveFilter] = useState('All');
