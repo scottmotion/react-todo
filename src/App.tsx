@@ -22,11 +22,11 @@ function App() {
   const [activeFilter, setActiveFilter] = useState('All');
 
   // Check if client prefers dark mode
-  // useEffect(() => {
-  //   if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-  //     setTheme('dark');
-  //   }
-  // }, []);
+  useEffect(() => {
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      setTheme('dark');
+    }
+  }, []);
 
   useEffect(() => {
     var htmlElement = document.getElementsByTagName('html')[0];
