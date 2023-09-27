@@ -21,7 +21,7 @@ function App() {
   const filters: string[] = ['All', 'Active', 'Completed'];
   const [activeFilter, setActiveFilter] = useState('All');
 
-  // Check if client prefers dark mode
+  // Check if client prefers light mode
   useEffect(() => {
     if (window.matchMedia('(prefers-color-scheme: light)').matches) {
       setTheme('light');
