@@ -31,6 +31,7 @@ export const Todo = forwardRef(({ ...props }: TodoProps, ref) => {
       } `}
     >
       <button
+        aria-label="Status"
         disabled={props.isOverlay}
         onClick={handleToggleCompleted}
         className={`aspect-square shrink-0 rounded-full border border-very-light-gray-blue p-1 dark:border-very-dark-gray-blue-2 md:p-1.5 ${
@@ -58,6 +59,7 @@ export const Todo = forwardRef(({ ...props }: TodoProps, ref) => {
         {props.todo.title}
       </p>
       <button
+        aria-label="Delete"
         className={`shrink-0 text-lg text-dark-gray-blue hover:text-very-dark-gray-blue group-hover:visible dark:text-dark-gray-blue-2 hover:dark:text-light-gray-blue-hover md:invisible md:text-[27px] ${
           props.isOverlay ? 'cursor-grabbing' : ''
         } ${props.isDragging ? 'invisible' : ''}`}

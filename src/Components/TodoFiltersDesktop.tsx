@@ -14,6 +14,7 @@ export default function TodoFiltersDesktop({
       <>
         {filters.map((filter, index) => (
           <button
+            aria-label={`Filter ${filter}`}
             className={`${
               filter === activeFilter ? 'text-bright-blue' : ''
             } text-base hover:text-very-dark-gray-blue hover:dark:text-light-gray-blue-hover`}
