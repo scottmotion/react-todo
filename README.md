@@ -53,20 +53,20 @@ Users should be able to:
 
 This was my first time using TypeScript, Tailwind, and Dnd-kit, and I'm glad I took the opportunity to learn them all.
 
-My first impression of TypeScript is that there's alot of setup and verbosity for even a small project, but I can already see the advantages it provides when working on a larger codebase (and with multiple devs).
+My first impression of TypeScript is that there's a lot of setup and verbosity for even a small project, but I can already see the advantages it provides when working on a larger codebase (and with multiple developers).
 
-I was unitially hesitant to use Tailwind. I had use Bootstrap many time and this just seemed like a more developed version of the same thing with all the same bloated class attributes. However once I installed the Prettier code formatting extension and began configuring my Tailwind setup I suprised at how easy the development experience was.
+I was initially hesitant to use Tailwind. I had used Bootstrap many times and this just seemed like a more developed version of the same thing with all the same bloated class attributes. However, once I installed the Prettier code formatting extension and began configuring my Tailwind setup, I was surprised at how easy the development experience was.
 
 Dnd-Kit on the other hand presented many challenges.
 
 ### Continued development
 
-Next version to include database and user authernticaion.
+Next version will include a database and user authentication.
 
 ### Useful resources
 
-- [React Dnd-Kit](https://dndkit.com/) - A fully featured and easy to yse React Drag-and-Drop toolkit.
-- [Prettier](https://prettier.io/) - Indispensible code formatter, especially for TS and Tailwind.
+- [React Dnd-Kit](https://dndkit.com/) - A fully featured React Drag-and-Drop toolkit.
+- [Prettier](https://prettier.io/) - Indispensable code formatter, especially for TS and Tailwind.
 
 ## Author
 
