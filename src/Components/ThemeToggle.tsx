@@ -11,6 +11,7 @@ export default function ThemeToggle({ toggleTheme }: ThemeToggleProps) {
   const theme = useContext(ThemeContext);
   return (
     <button
+      aria-label="Switch Theme"
       className="shrink-0 text-xl md:text-3xl"
       onClick={e => toggleTheme(e)}
     >
