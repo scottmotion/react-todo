@@ -75,7 +75,7 @@ function App() {
       <main className="flex select-none flex-col items-center">
         <section className="relative flex w-full select-none">
           <img
-            src=""
+            src="/assets/bg-mobile-light.jpg"
             alt="Page header"
             className="w-full content-header-mobile-light dark:content-header-mobile-dark md:content-header-desktop-light md:dark:content-header-desktop-dark"
           ></img>
