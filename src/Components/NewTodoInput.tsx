@@ -43,6 +43,7 @@ export default function NewTodoInput({ addTodo }: NewTodoProps) {
         onChange={e => handleChange(e)}
         onKeyDown={e => handleKeyDown(e)}
         value={newTodo.title}
+        name="New Todo"
       />
     </div>
   );
