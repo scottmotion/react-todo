@@ -74,7 +74,11 @@ function App() {
     <ThemeContext.Provider value={theme}>
       <main className="flex select-none flex-col items-center">
         <section className="relative flex w-full select-none">
-          <img className="w-full content-header-mobile-light dark:content-header-mobile-dark md:content-header-desktop-light md:dark:content-header-desktop-dark"></img>
+          <img
+            src=""
+            alt="Page header"
+            className="w-full content-header-mobile-light dark:content-header-mobile-dark md:content-header-desktop-light md:dark:content-header-desktop-dark"
+          ></img>
         </section>
         <section className="absolute mt-11 flex w-full max-w-[37rem] flex-col gap-y-4 px-6 md:mt-[70px] md:gap-y-6">
           <AppHeader>
