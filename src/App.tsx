@@ -8,7 +8,6 @@ import TodoFiltersMobile from './Components/TodoFiltersMobile';
 import TodoFiltersDesktop from './Components/TodoFiltersDesktop';
 import { todoData } from './data';
 
-import './App.css';
 import { UniqueIdentifier } from '@dnd-kit/core';
 
 export const ThemeContext = createContext('light');
